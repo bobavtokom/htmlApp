@@ -2,22 +2,43 @@
 <html>
 <head>
 	<title>Html Css Js Project</title>
-	<link rel="stylesheet" type="text/css" href="css/style.css">
+	<link rel="stylesheet" type="text/css" href="css/htmlApp.css">
 </head>
 <body>
 	<header>
 		<h1>Our project</h1>
 		<nav>
 			<ul>
-				<li><a href="#">Home</a></li>
+				<li><a href="#" class="active">Home</a></li>
 				<li><a href="about.html">About</a></li>
 				<li><a href="contact.html">Contact</a></li>
+				<form action="https://www.google.com/search" method="get">
+					<label for="search"></label>
+					<input type="text" id="search" name="q" placeholder="Search">
+					<button type="submit">Search</button>
+				  </form>
 			</ul>
+			
+			  
 		</nav>
 	</header>
 	<main>
+		<button class="left-window-btn" onclick="openLeftSidebar()">
+			Open sidebar
+		  </button>
+		<div  id="left-sidebar">
+			<ul>
+			  <li>Menu Item 1111</li>
+			  <li>Menu Item 2</li>
+			  <li>Menu Item 3</li>
+			  <li>hello 4</li>
+			</ul>
+			<button class="left-sidebar-btn" onclick="closeLeftSidebar()">
+				Close sidebar
+			  </button>
+		  </div>
 		<section class="left">
-			<h2>Left Section</h2>
+			<h2>Left Section left</h2>
 			<p>Some elements here</p>
 		</section>
 		<section class="right">
@@ -35,5 +56,6 @@
 		<h1>Footer section</h1>
 		<p>&copy; 2023 Html Css Js Project. All rights reserved.</p>
 	</footer>
+	
 </body>
 </html>
