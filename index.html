@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Html Css Js Project</title>
+	<link rel="stylesheet" type="text/css" href="css/htmlApp.css">
+</head>
+<body>
+	<header>
+		<h1>Our project</h1>
+		<nav>
+			<ul>
+				<li><a href="#" class="active">About</a></li>
+				<li><a href="htmlApp.html">Home</a></li>
+				<li><a href="contact.html">Contact</a></li>
+			</ul>
+		</nav>
+	</header>
+	
+	<div class="slider-container">
+		
+		<div class="slide"></div>
+		<div class="slide"></div>
+		<div class="slide"></div>
+		<main>
+			<section id="index-text"class="center">
+				<h1>Wellcome to the best exotic destination suggestions.
+					We hope you will find your paradise
+					which will make you happy :)
+			</h1>
+			</section>
+		</main>
+	  </div>
+<script>
+	const slides = document.querySelectorAll('.slide');
+const slideInterval = setInterval(nextSlide, 5000);
+let currentSlide = 0;
+
+function nextSlide() {
+  slides[currentSlide].classList.remove('active');
+  currentSlide = (currentSlide + 1) % slides.length;
+  slides[currentSlide].classList.add('active');
+}
+
+</script>	  
+</body>
+</html>
