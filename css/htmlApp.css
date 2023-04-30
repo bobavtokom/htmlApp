@@ -19,7 +19,7 @@ header {
 	justify-content:space-around;
 	align-items: center;
 	padding: 10px;
-	background-color: #333;
+	background-color: #31c2c7;
 	color: #fff;
 }
 
@@ -80,23 +80,94 @@ footer {
 	color: #fff;
 	text-align: center;
 }
-.sidebar-left {
-	position: fixed;
-	top: 0;
-	left: 0;
-	bottom: 0;
-	width: 200px;
-	background-color: #eee;
-	animation-name: sidebar-animation;
-	animation-duration: 0.5s;
+
+  nav a.active {
+	background-color: #ccc;
+	color: #100d0d;
+  }
+  .left-window-btn {
+	background-color: #f5f5f5;
+	color: #333;
+	padding: 10px;
+	border: none;
+	border-radius: 5px;
+	font-size: 16px;
+	cursor: pointer;
+	transition: background-color 0.3s ease;
+	position: absolute;
+	top: 10px;
+	left: 10px;
+  }
+  .left-sidebar-btn{
+	background-color: #f5f5f5;
+	color: #333;
+	padding: 10px;
+	border: none;
+	border-radius: 5px;
+	font-size: 16px;
+	cursor: pointer;
+	transition: background-color 0.3s ease;
   }
   
-  @keyframes sidebar-animation {
-	0% {
-	  transform: translateX(-200px);
-	}
-	100% {
-	  transform: translateX(0);
-	}
+  .left-window-btn:hover {
+	background-color: #2c1414;
   }
+  #left-sidebar {
+	width: 250px;
+	height: 100%;
+	background-color: #d8d6c9;
+	position: fixed;
+	top: 0;
+	left: -250px;
+	z-index: 999;
+	transition: left 0.3s ease;
+  }
+  .slider-container {
+	position: relative;
+	height: 100vh;
+
+  }
+  
+  .slide {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background-size: cover;
+	background-position: center;
+  }
+  
+  .slide:nth-child(1) {
+	background-image: url('https://www.thetimes.co.uk/imageserver/image/%2Fmethode%2Ftimes%2Fprod%2Fweb%2Fbin%2F8fb45926-a86d-11ed-b108-3c207a871bac.jpg?crop=1500%2C1000%2C0%2C0');
+  }
+  
+  .slide:nth-child(2) {
+	background-image: url('https://www.shutterstock.com/image-photo/maldiv-beach-resort-panoramic-landscaps-260nw-1051887026.jpg');
+  }
+  
+  .slide:nth-child(3) {
+	background-image: url('https://idsb.tmgrup.com.tr/ly/uploads/images/2021/09/24/146502.jpg');
+  }
+  .slide {
+	opacity: 0;
+	transition: opacity 1s ease-in-out;
+  }
+  
+  .slide.active {
+	opacity: 1;
+  }
+  #index-text{
+	z-index: 15;
+	background: transparent;
+  }
+  section > h1{
+	color: #f1f1f1;
+  }
+  
+	
+  
+
+  
+  
   
