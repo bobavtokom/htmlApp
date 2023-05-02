@@ -3,6 +3,7 @@
 <head>
 	<title>Html Css Js Project</title>
 	<link rel="stylesheet" type="text/css" href="css/htmlApp.css">
+	<script src="https://kit.fontawesome.com/6a7b1ca22e.js" crossorigin="anonymous"></script>
 </head>
 <body>
 	<header>
@@ -14,12 +15,10 @@
 				<li><a href="contact.html">Contact</a></li>
 				<form action="https://www.google.com/search" method="get">
 					<label for="search"></label>
-					<input type="text" id="search" name="q" placeholder="Search">
+					<input type="text" id="search" name="q" placeholder="Google">
 					<button type="submit">Search</button>
 				  </form>
 			</ul>
-			
-			  
 		</nav>
 	</header>
 	<main>
@@ -47,8 +46,43 @@
 			<p>Some elements here</p>
 		</section>
 		<section class="center">
-			<h2>Center Section</h2>
-			<p>Some elements here</p>
+			<div class="container article-world">
+				<h2>Skiathos Greece</h2>
+				<img class="image" src="https://travelpassionate.com/wp-content/uploads/2020/01/Lalaria-Beach-Skiathos.jpg" alt="Random Image">
+				<p class="description">Skiathos, a Greek island in the northwest Aegean Sea, is part of the Sporades archipelago. It’s best known for its beaches and buzzing, youth-driven nightlife scene. The action centers around Skiathos Town, where bars and restaurants spill onto sidewalks along the old harbor and Papadiamanti street, the main pedestrian thoroughfare. Between town and the airport are many open-air, waterfront clubs.</p>
+				<button id="like-button">Like</button>
+				<button id="dislike-button">Dislike</button>
+				<div>
+				<span id="like-count">0</span> likes, 
+				<span id="dislike-count">0</span> dislikes
+				</div>
+			</div>
+		</section>
+		<section class="center">
+			<div class="container article-world">
+				<h2>Tyrol Austria</h2>
+				<img class="image" src="https://www.shutterstock.com/image-photo/village-inneralpbach-alpbach-valleyaustriatirol-260nw-543923905.jpg" alt="Random Image">
+				<p class="description">Tyrol is a western Austrian state in the Alps that’s known for its ski resorts, historic sites and folk traditions. The capital city, Innsbruck, surrounded by mountains, is home to Habsburg Empire landmarks like baroque-style Hofburg Palace and Gothic Hofkirche Church. The city’s symbol is the 15th-century Goldenes Dachl, a loggia topped with gleaming copper tiles commissioned by Habsburg Emperor Maximilian I.</p>
+				<button id="like-button">Like</button>
+				<button id="dislike-button">Dislike</button>
+				<div>
+				<span id="like-count">0</span> likes, 
+				<span id="dislike-count">0</span> dislikes
+				</div>
+			</div>
+		</section>
+		<section class="center">
+			<div class="container article-world">
+				<h2>Matka Canyon Macedonia</h2>
+				<img class="image" src="https://img.particlenews.com/img/id/4C3iZg_0l8rYzE100?type=thumbnail_1600x1200" alt="Random Image">
+				<p class="description">Matka is a canyon located west of central Skopje, North Macedonia. Covering roughly 5,000 hectares, Matka is one of the most popular outdoor destinations in North Macedonia and is home to several medieval monasteries. The Matka Lake within the Matka Canyon is the oldest artificial lake in the country.</p>
+				<button id="like-button">Like</button>
+				<button id="dislike-button">Dislike</button>
+				<div>
+				<span id="like-count">0</span> likes, 
+				<span id="dislike-count">0</span> dislikes
+				</div>
+			</div>
 		</section>
 	</main>
 
@@ -56,6 +90,31 @@
 		<h1>Footer section</h1>
 		<p>&copy; 2023 Html Css Js Project. All rights reserved.</p>
 	</footer>
-	
+	<script>
+		
+		const likeButton = document.getElementById('like-button');
+		const dislikeButton = document.getElementById('dislike-button');
+		const likeCount = document.getElementById('like-count');
+		const dislikeCount = document.getElementById('dislike-count');
+
+
+		let currentLikes = parseInt(localStorage.getItem('likes')) || 0;
+		let currentDislikes = parseInt(localStorage.getItem('dislikes')) || 0;
+		likeCount.textContent = currentLikes;
+		dislikeCount.textContent = currentDislikes;
+
+		likeButton.addEventListener('click', () => {
+		currentLikes++;
+		likeCount.textContent = currentLikes;
+		localStorage.setItem('likes', currentLikes);
+		});
+
+		dislikeButton.addEventListener('click', () => {
+		currentDislikes++;
+		dislikeCount.textContent = currentDislikes;
+		localStorage.setItem('dislikes', currentDislikes);
+		});
+
+	</script>
 </body>
 </html>

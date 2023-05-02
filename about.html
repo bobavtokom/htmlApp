@@ -3,6 +3,7 @@
 <head>
 	<title>Html Css Js Project</title>
 	<link rel="stylesheet" type="text/css" href="css/htmlApp.css">
+	<script src="https://kit.fontawesome.com/6a7b1ca22e.js" crossorigin="anonymous"></script>
 </head>
 <body>
 	<header>
@@ -12,17 +13,28 @@
 				<li><a href="#" class="active">About</a></li>
 				<li><a href="htmlApp.html">Home</a></li>
 				<li><a href="contact.html">Contact</a></li>
+				<form action="https://www.google.com/search" method="get">
+					<label for="search"></label>
+					<input type="text" id="search" name="q" placeholder="Google">
+					<button type="submit">Search</button>
+				  </form>
 			</ul>
 		</nav>
 	</header>
 	<main>
-		<div class="sidebar-left">
+		<button class="left-window-btn" onclick="openLeftSidebar()">
+			Open sidebar
+		  </button>
+		<div  id="left-sidebar">
 			<ul>
-			  <li>Menu Item 1</li>
+			  <li>Menu Item 1111</li>
 			  <li>Menu Item 2</li>
 			  <li>Menu Item 3</li>
 			  <li>hello 4</li>
 			</ul>
+			<button class="left-sidebar-btn" onclick="closeLeftSidebar()">
+				Close sidebar
+			  </button>
 		  </div>
 		<section class="center">
 			<p>About us</p>

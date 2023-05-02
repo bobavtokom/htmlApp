@@ -12,18 +12,29 @@
 				<li><a href="#" class="active">Contact</a></li>
 				<li><a href="htmlApp.html">Home</a></li>
 				<li><a href="about.html">About</a></li>
+				<form action="https://www.google.com/search" method="get">
+					<label for="search"></label>
+					<input type="text" id="search" name="q" placeholder="Google">
+					<button type="submit">Search</button>
+				  </form>
 			</ul>
 		</nav>
 	</header>
 	<main>
-			<div class="sidebar-left">
-				<ul>
-				  <li>Menu Item 1</li>
-				  <li>Menu Item 2</li>
-				  <li>Menu Item 3</li>
-				  <li>hello 4</li>
-				</ul>
-			  </div>
+		<button class="left-window-btn" onclick="openLeftSidebar()">
+			Open sidebar
+		  </button>
+		<div  id="left-sidebar">
+			<ul>
+			  <li>Menu Item 1111</li>
+			  <li>Menu Item 2</li>
+			  <li>Menu Item 3</li>
+			  <li>hello 4</li>
+			</ul>
+			<button class="left-sidebar-btn" onclick="closeLeftSidebar()">
+				Close sidebar
+			  </button>
+		  </div>
 		<section class="center">
 			<p>Contact page</p>
 		</section>
