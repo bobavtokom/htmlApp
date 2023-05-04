@@ -237,6 +237,7 @@ footer {
 	height: 100px;
 	writing-mode: vertical-rl; 
 	text-orientation: upright; 
+	transform: rotate(-90);
   }
   
   .spin-button:hover {
