@@ -4,13 +4,18 @@
 	<title>Html Css Js Project</title>
 	<link rel="stylesheet" type="text/css" href="css/htmlApp.css">
 	<script src="https://kit.fontawesome.com/6a7b1ca22e.js" crossorigin="anonymous"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+        <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+	<script src = "js/script.js"></script>
+	<script src="js/jqueryScript.js"></script>
 </head>
 <body>
+
 	<header>
 		<h1>Our project</h1>
 		<nav>
 			<ul>
-				<li><a href="#" class="active">Home</a></li>
+				<li><a href="#" class="active spin-button">Home</a></li>
 				<li><a href="about.html">About</a></li>
 				<li><a href="contact.html">Contact</a></li>
 				<form action="https://www.google.com/search" method="get">
@@ -22,9 +27,11 @@
 		</nav>
 	</header>
 	<main>
-		<button class="left-window-btn" onclick="openLeftSidebar()">
-			Open sidebar
+		  <button class="spin-button left-window-btn"onclick="openLeftSidebar()>
+			<span class="initial-text">Open sidebar</span>
+			<span class="hover-text"></span>
 		  </button>
+		  
 		<div  id="left-sidebar">
 			<ul>
 			  <li>Menu Item 1111</li>
@@ -40,11 +47,6 @@
 			<h2>Left Section left</h2>
 			<p>Some elements here</p>
 		</section>
-		<section class="right">
-			<h2>Right Section</h2>
-			<p>Some elements here</p>
-			<p>Some elements here</p>
-		</section>
 		<section class="center">
 			<div class="container article-world">
 				<h2>Skiathos Greece</h2>
@@ -57,8 +59,6 @@
 				<span id="dislike-count">0</span> dislikes
 				</div>
 			</div>
-		</section>
-		<section class="center">
 			<div class="container article-world">
 				<h2>Tyrol Austria</h2>
 				<img class="image" src="https://www.shutterstock.com/image-photo/village-inneralpbach-alpbach-valleyaustriatirol-260nw-543923905.jpg" alt="Random Image">
@@ -70,8 +70,6 @@
 				<span id="dislike-count">0</span> dislikes
 				</div>
 			</div>
-		</section>
-		<section class="center">
 			<div class="container article-world">
 				<h2>Matka Canyon Macedonia</h2>
 				<img class="image" src="https://img.particlenews.com/img/id/4C3iZg_0l8rYzE100?type=thumbnail_1600x1200" alt="Random Image">
@@ -83,38 +81,16 @@
 				<span id="dislike-count">0</span> dislikes
 				</div>
 			</div>
-		</section>
+			</section>
+			<section class="right">
+				<h2>Right Section</h2>
+				<p>Some elements here</p>
+				<p>Some elements here</p>
+			</section>
 	</main>
-
 	<footer>
 		<h1>Footer section</h1>
 		<p>&copy; 2023 Html Css Js Project. All rights reserved.</p>
 	</footer>
-	<script>
-		
-		const likeButton = document.getElementById('like-button');
-		const dislikeButton = document.getElementById('dislike-button');
-		const likeCount = document.getElementById('like-count');
-		const dislikeCount = document.getElementById('dislike-count');
-
-
-		let currentLikes = parseInt(localStorage.getItem('likes')) || 0;
-		let currentDislikes = parseInt(localStorage.getItem('dislikes')) || 0;
-		likeCount.textContent = currentLikes;
-		dislikeCount.textContent = currentDislikes;
-
-		likeButton.addEventListener('click', () => {
-		currentLikes++;
-		likeCount.textContent = currentLikes;
-		localStorage.setItem('likes', currentLikes);
-		});
-
-		dislikeButton.addEventListener('click', () => {
-		currentDislikes++;
-		dislikeCount.textContent = currentDislikes;
-		localStorage.setItem('dislikes', currentDislikes);
-		});
-
-	</script>
 </body>
 </html>

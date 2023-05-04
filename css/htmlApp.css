@@ -84,6 +84,9 @@ footer {
   nav a.active {
 	background-color: #ccc;
 	color: #100d0d;
+	width: 60px;
+	height: 30px;
+	border-radius: 5%;
   }
   .left-window-btn {
 	background-color: #f5f5f5;
@@ -112,16 +115,46 @@ footer {
   .left-window-btn:hover {
 	background-color: #2c1414;
   }
-  #left-sidebar {
-	width: 250px;
-	height: 100%;
-	background-color: #d8d6c9;
+ /* Sidebar styling */
+.sidebar {
 	position: fixed;
 	top: 0;
 	left: -250px;
-	z-index: 999;
-	transition: left 0.3s ease;
+	width: 250px;
+	height: 100%;
+	background-color: #333;
+	color: #fff;
+	transition: all 0.3s ease-in-out;
   }
+  
+  .sidebar ul {
+	list-style: none;
+	padding: 0;
+	margin: 0;
+  }
+  
+  .sidebar li {
+	padding: 10px;
+	border-bottom: 1px solid #444;
+  }
+  
+  .sidebar li:last-child {
+	border-bottom: none;
+  }
+  
+  .sidebar a {
+	color: #fff;
+	text-decoration: none;
+  }
+
+  .sidebar.active {
+	left: 0;
+  }
+  
+  .sidebar.active + .menu-toggle {
+	right: -50px;
+  }
+  
   .slider-container {
 	position: relative;
 	height: 100vh;
@@ -190,6 +223,58 @@ footer {
 	text-align: justify;
 	margin-bottom: 15px;
 }
+.spin-button {
+	padding: 10px;
+	border-radius: 5px;
+	border: 1px solid rgb(49, 169, 209);
+	background-color: #28deef;
+	color: #fff;
+	font-size: 20px;
+	cursor: pointer;
+	position: relative;
+	left: 0;
+	width: 30px;
+	height: 100px;
+	writing-mode: vertical-rl; 
+	text-orientation: upright; 
+  }
+  
+  .spin-button:hover {
+	animation: spin 1s linear forwards;
+  }
+  
+  .spin-button:hover .initial-text {
+	display: none;
+  }
+  
+  .spin-button:hover .hover-text {
+	display: inline-block;
+  }
+  
+  @keyframes spin {
+	0% {
+	  transform: rotate(0deg);
+	}
+	100% {
+	  transform: rotate(360deg);
+	}
+  }
+  
+  .initial-text {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+  }
+  
+  .hover-text {
+	display: none;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+  }
+  
   
 	
   
