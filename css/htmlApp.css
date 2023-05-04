@@ -113,10 +113,10 @@ footer {
   }
   
   .left-window-btn:hover {
-	background-color: #2c1414;
+	background-color: #82aceb;
   }
  /* Sidebar styling */
-.sidebar {
+#sidebar {
 	position: fixed;
 	top: 0;
 	left: -250px;
@@ -127,34 +127,38 @@ footer {
 	transition: all 0.3s ease-in-out;
   }
   
-  .sidebar ul {
+  #sidebar ul {
 	list-style: none;
 	padding: 0;
 	margin: 0;
   }
   
-  .sidebar li {
+  #sidebar li {
 	padding: 10px;
 	border-bottom: 1px solid #444;
   }
   
-  .sidebar li:last-child {
+  #sidebar li:last-child {
 	border-bottom: none;
   }
   
-  .sidebar a {
+  #sidebar a {
 	color: #fff;
 	text-decoration: none;
   }
 
-  .sidebar.active {
+  #sidebar.active {
 	left: 0;
   }
   
-  .sidebar.active + .menu-toggle {
+  #sidebar.active + .menu-toggle {
 	right: -50px;
   }
   
+  .sidebar-text {
+	writing-mode: vertical-rl; /* sets vertical writing mode */
+	transform: rotate(180deg); /* rotates the button to 180 degrees */
+  }
   .slider-container {
 	position: relative;
 	height: 100vh;
@@ -224,7 +228,7 @@ footer {
 	margin-bottom: 15px;
 }
 .spin-button {
-	padding: 10px;
+	/* padding: 10px;
 	border-radius: 5px;
 	border: 1px solid rgb(49, 169, 209);
 	background-color: #28deef;
@@ -236,7 +240,22 @@ footer {
 	width: 30px;
 	height: 100px;
 	writing-mode: vertical-rl; 
-	text-orientation: upright; 
+	text-orientation: upright;  */
+
+	position: fixed;
+    top: 10%;
+    right: 0;
+    /* text-align: center; */
+    /* padding: 10px; */
+    border-radius: 5px;
+    border: 1px solid rgb(49, 169, 209);
+    background-color: #28deef;
+    color: #fff;
+    font-size: 20px;
+    cursor: pointer;
+    /* position: relative; */
+    left: 0;
+    width: 30px;
   }
   
   .spin-button:hover {
