@@ -10,7 +10,13 @@ body {
 	font-size: 16px;
 	line-height: 1.5;
 }
-
+header img{
+	margin-left: 30%;
+	position: relative;
+	height: 100px;
+	width: 150px;
+	border-radius: 5px;
+}
 
 header {
 	display: flex;
@@ -19,7 +25,11 @@ header {
 	align-items: center;
 	padding: 10px;
 	background-color: #31c2c7;
+	background-image: url("https://www.froschluxurytravel.com/img/pages/header/13-experience-the-mana-of-tahiti.r3eov5.1920w.jpeg");
 	color: #fff;
+}
+.right img{
+	border-radius: 5px;
 }
 
 header h1 {
@@ -38,6 +48,12 @@ nav a {
 	color: #fff;
 	text-decoration: none;
 	padding: 5px;
+
+}
+nav a:hover{
+scale: 2;
+background-color: #dccba9;
+border-radius: 5%;
 }
 
 
@@ -60,6 +76,7 @@ section h2 {
 
 .left {
 	grid-column: 1 / 2;
+	margin-left: 5%;
 }
 
 
@@ -87,45 +104,19 @@ nav a.active {
 	height: 30px;
 	border-radius: 5%;
 }
-
-.left-window-btn {
-	background-color: #f5f5f5;
-	color: #333;
-	padding: 10px;
-	border: none;
-	border-radius: 5px;
-	font-size: 16px;
-	cursor: pointer;
-	transition: background-color 0.3s ease;
-	position: absolute;
-	top: 10px;
-	left: 10px;
+nav a.active:hover{
+	scale: 2;
+	opacity: 0.7;
 }
 
-.left-sidebar-btn {
-	background-color: #f5f5f5;
-	color: #333;
-	padding: 10px;
-	border: none;
-	border-radius: 5px;
-	font-size: 16px;
-	cursor: pointer;
-	transition: background-color 0.3s ease;
-}
-
-.left-window-btn:hover {
-	background-color: #82aceb;
-}
-
-/* Sidebar styling */
 #sidebar {
 	position: fixed;
 	top: 0;
 	left: -250px;
 	width: 250px;
 	height: 100%;
-	background-color: #333;
-	color: #fff;
+	background-color: #42bebe;
+	color: #f7f9f3;
 	transition: all 0.3s ease-in-out;
 }
 
@@ -137,7 +128,7 @@ nav a.active {
 
 #sidebar li {
 	padding: 10px;
-	border-bottom: 1px solid #444;
+	border-bottom: 1px solid #cbaaaa;
 }
 
 #sidebar li:last-child {
@@ -159,9 +150,7 @@ nav a.active {
 
 .sidebar-text {
 	writing-mode: vertical-rl;
-	/* sets vertical writing mode */
 	transform: rotate(180deg);
-	/* rotates the button to 180 degrees */
 }
 
 .slider-container {
@@ -243,8 +232,8 @@ section>h1 {
 
 .spin-button {
     position: fixed;
-
-    padding: 5px;
+    width: 25px;
+    padding: 0;
     border-radius: 5px;
     border: 1px solid rgb(49, 169, 209);
     background-color: #28deef;
@@ -256,10 +245,6 @@ section>h1 {
 
 .spin-button:hover {
 	animation: spin 1s linear forwards;
-}
-
-.spin-button:hover .initial-text {
-	display: none;
 }
 
 .spin-button:hover .hover-text {
@@ -275,14 +260,6 @@ section>h1 {
 		transform: rotate(360deg);
 	}
 }
-
-.initial-text {
-	position: absolute;
-	top: 50%;
-	left: 50%;
-	transform: translate(-50%, -50%);
-}
-
 .hover-text {
 	display: none;
 	position: absolute;
@@ -291,3 +268,32 @@ section>h1 {
 	transform: translate(-50%, -50%);
 	transform: translate(-50%, -50%);
 }
+.search-input {
+	padding: 0;
+	padding-left: 5px;
+	border: 2px solid #ccc;
+	border-radius: 5px;
+	width: 250px;
+	font-size: 16px;
+  }
+  .search{
+	padding: auto;
+	background-color: #e9f0ee;
+	color: #424747;
+	border-radius: 3px;
+	padding: 2px;
+  }
+  .search:hover{
+	scale: 1.1;
+	opacity: 0.6;
+  }
+  #x-close{
+   position: absolute;
+   right: 5px;
+   top: 5px;
+  }
+ #sidebar-img{
+	position: relative;
+	width: 200px;
+	height: 180px;
+ }
