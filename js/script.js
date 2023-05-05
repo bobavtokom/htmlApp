@@ -20,10 +20,13 @@ const likeButton = document.getElementById('like-button');
 		dislikeCount.textContent = currentDislikes;
 		localStorage.setItem('dislikes', currentDislikes);
 		});
-				function openLeftSidebar() {
-		document.getElementById("left-sidebar").style.left = "0";
-		}
-		function closeLeftSidebar() {
-			document.getElementById("left-sidebar").style.left="-250px";
-		}
-        
+		
+	function openLeftSidebar() {
+		document.getElementById("sidebar").style.left = "0px";
+		// document.querySelector(".left-sidebar").style.left = "0";
+	}
+	function closeLeftSidebar() {
+		// document.querySelector(".left-sidebar").style.left = "-250px";
+		document.getElementById("sidebar").style.left = "-250px";
+	}
+	
