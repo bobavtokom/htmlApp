@@ -54,8 +54,8 @@ function closeLeftSidebar() {
 const IncludeFromHtml = () => {
 	let includeElement = document.querySelector(".js-include-html");
 	if (includeElement !== null) {
-		let htmlFile = includeElement.getAttribute("data-filename");
-		if (htmlFile) {
+		let filename = includeElement.getAttribute("data-filename");
+		if (filename) {
 			xhttp = new XMLHttpRequest();
 			xhttp.onreadystatechange = function () {
 				if (this.readyState == 4) {
@@ -64,7 +64,7 @@ const IncludeFromHtml = () => {
 					IncludeFromHtml();
 				}
 			}
-			xhttp.open("GET", htmlFile, true);
+			xhttp.open("GET", filename, true);
 			xhttp.send();
 		}
 	}
@@ -73,8 +73,8 @@ const IncludeFromHtml = () => {
 const IncludeFromJSON = () => {
 	let includeElement = document.querySelector(".js-include-json");
 	if (includeElement !== null) {
-		let htmlFile = includeElement.getAttribute("data-filename");
-		if (htmlFile) {
+		let filename = includeElement.getAttribute("data-filename");
+		if (filename) {
 			xhttp = new XMLHttpRequest();
 			xhttp.onreadystatechange = function () {
 				if (this.readyState == 4) {
@@ -96,16 +96,16 @@ const IncludeFromJSON = () => {
 						});
 						includeElement.innerHTML = output;
 
-						document.querySelectorAll("#like-button").forEach(item => item.addEventListener("click", LikeButtonClick));
-						document.querySelectorAll("#dislike-button").forEach(item => item.addEventListener("click", DislikeButtonClick));
-						document.querySelectorAll(".article-world").forEach(article => InitLikesAndDislikes(article));
+						includeElement.querySelectorAll("#like-button").forEach(item => item.addEventListener("click", LikeButtonClick));
+						includeElement.querySelectorAll("#dislike-button").forEach(item => item.addEventListener("click", DislikeButtonClick));
+						includeElement.querySelectorAll(".article-world").forEach(article => InitLikesAndDislikes(article));
 
 					}
 					includeElement.classList.remove("js-include-json");
 					IncludeFromJSON();
 				}
 			}
-			xhttp.open("GET", htmlFile, true);
+			xhttp.open("GET", filename, true);
 			xhttp.send();
 		}
 	}
