@@ -203,8 +203,15 @@ nav a.active {
 
 #index-text {
 	z-index: 15;
-	background: transparent;
+    text-align: center;
+    background-color: rgb(49 194 199 / 60%);
+    border-radius: 20px;
 }
+
+h1>a:link { text-decoration: none; color: #f1f1f1; }
+h1>a:visited { text-decoration: none; color: #f1f1f1; }
+h1>a:hover { text-decoration: none; color: #f1f1f1; }
+h1>a:active { text-decoration: none; color: #f1f1f1;}
 
 section>h1 {
 	color: #f1f1f1;
@@ -243,7 +250,6 @@ section>h1 {
 
 .spin-button {
     position: fixed;
-
     padding: 5px;
     border-radius: 5px;
     border: 1px solid rgb(49, 169, 209);
@@ -266,16 +272,6 @@ section>h1 {
 	display: inline-block;
 }
 
-@keyframes spin {
-	0% {
-		transform: rotate(0deg);
-	}
-
-	100% {
-		transform: rotate(360deg);
-	}
-}
-
 .initial-text {
 	position: absolute;
 	top: 50%;
@@ -289,4 +285,32 @@ section>h1 {
 	top: 50%;
 	left: 50%;
 	transform: translate(-50%, -50%);
+}
+
+.btn {
+	background-color: #31c2c7;
+	border-radius: 10px;
+	padding: 10px;
+	cursor: pointer;
+	width: fit-content;
+    margin: auto;
+}
+
+.btn>a {
+	color:#f1f1f1;
+	text-decoration: none;
+}
+
+.btn:hover {
+	animation: spin 1s linear forwards;
+}
+
+@keyframes spin {
+	0% {
+		transform: rotate(0deg);
+	}
+
+	100% {
+		transform: rotate(360deg);
+	}
 }
