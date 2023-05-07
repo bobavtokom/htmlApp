@@ -192,8 +192,15 @@ nav a.active:hover{
 
 #index-text {
 	z-index: 15;
-	background: transparent;
+    text-align: center;
+    background-color: rgb(49 194 199 / 60%);
+    border-radius: 20px;
 }
+
+h1>a:link { text-decoration: none; color: #f1f1f1; }
+h1>a:visited { text-decoration: none; color: #f1f1f1; }
+h1>a:hover { text-decoration: none; color: #f1f1f1; }
+h1>a:active { text-decoration: none; color: #f1f1f1;}
 
 section>h1 {
 	color: #f1f1f1;
@@ -232,8 +239,7 @@ section>h1 {
 
 .spin-button {
     position: fixed;
-    width: 25px;
-    padding: 0;
+    padding: 5px;
     border-radius: 5px;
     border: 1px solid rgb(49, 169, 209);
     background-color: #28deef;
@@ -251,6 +257,39 @@ section>h1 {
 	display: inline-block;
 }
 
+.initial-text {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+}
+
+.hover-text {
+	display: none;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+}
+
+.btn {
+	background-color: #31c2c7;
+	border-radius: 10px;
+	padding: 10px;
+	cursor: pointer;
+	width: fit-content;
+    margin: auto;
+}
+
+.btn>a {
+	color:#f1f1f1;
+	text-decoration: none;
+}
+
+.btn:hover {
+	animation: spin 1s linear forwards;
+}
+
 @keyframes spin {
 	0% {
 		transform: rotate(0deg);
@@ -260,40 +299,3 @@ section>h1 {
 		transform: rotate(360deg);
 	}
 }
-.hover-text {
-	display: none;
-	position: absolute;
-	top: 50%;
-	left: 50%;
-	transform: translate(-50%, -50%);
-	transform: translate(-50%, -50%);
-}
-.search-input {
-	padding: 0;
-	padding-left: 5px;
-	border: 2px solid #ccc;
-	border-radius: 5px;
-	width: 250px;
-	font-size: 16px;
-  }
-  .search{
-	padding: auto;
-	background-color: #e9f0ee;
-	color: #424747;
-	border-radius: 3px;
-	padding: 2px;
-  }
-  .search:hover{
-	scale: 1.1;
-	opacity: 0.6;
-  }
-  #x-close{
-   position: absolute;
-   right: 5px;
-   top: 5px;
-  }
- #sidebar-img{
-	position: relative;
-	width: 200px;
-	height: 180px;
- }
