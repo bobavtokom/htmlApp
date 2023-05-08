@@ -1,91 +1,33 @@
 <!DOCTYPE html>
 <html>
+
 <head>
 	<title>Html Css Js Project</title>
 	<link rel="stylesheet" type="text/css" href="css/htmlApp.css">
 	<script src="https://kit.fontawesome.com/6a7b1ca22e.js" crossorigin="anonymous"></script>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
-    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+	<script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
 </head>
-<body>
 
-	<header>
-		<img src="https://fiverr-res.cloudinary.com/t_main1,q_auto,f_auto/gigs2/301383703/original/a8cccf825048f406f8868a549aa14d2dda6c3182.jpg" alt="">
-		<nav>
-			<ul>
-				<li><a href="#" class="active">Home</a></li>
-				<li><a href="about.html">About</a></li>
-				<li><a href="contact.html">Contact</a></li>
-				<form action="https://www.google.com/search" method="get" target="_blank">
-					<label for="search"></label>
-					<input type="text" id="search" class="search-input" name="q" placeholder="Google">
-					<button class="search" type="submit">Search</button>
-				  </form>
-			</ul>
-		</nav>
-	</header>
+<body>
+	<span class="js-include-html" data-filename="partial/header.html"></span>
+
 	<main>
-		<button class="spin-button" onclick="openLeftSidebar()">
-			<span class="sidebar-text">Open Sidebar</span>
-		</button>
-		<div id="sidebar">
-			<i class="fa fa-times" aria-hidden="true" id="x-close" onclick="closeLeftSidebar()"></i>
-			<ul>
-			  <li>Menu Item 1111</li>
-			  <li>Menu Item 2</li>
-			  <li>Menu Item 3</li>
-			  <li>hello 4</li>
-			</ul>
-		</div>
+		<span class="js-include-html" data-filename="partial/_sidebar.htm"></span>
 		<section class="left">
-			<img id="sidebar-img"src="https://i.pinimg.com/originals/d8/ed/36/d8ed368c34088f388b2a55a202e42ea2.gif" alt="image">
+			<img class="sidebar-img" src="https://i.pinimg.com/originals/d8/ed/36/d8ed368c34088f388b2a55a202e42ea2.gif"
+				alt="image">
 		</section>
 		<section class="center">
-			<div class="container article-world">
-				<h2>Skiathos Greece</h2>
-				<img class="image" src="https://travelpassionate.com/wp-content/uploads/2020/01/Lalaria-Beach-Skiathos.jpg" alt="Random Image">
-				<p class="description">Skiathos, a Greek island in the northwest Aegean Sea, is part of the Sporades archipelago. It’s best known for its beaches and buzzing, youth-driven nightlife scene. The action centers around Skiathos Town, where bars and restaurants spill onto sidewalks along the old harbor and Papadiamanti street, the main pedestrian thoroughfare. Between town and the airport are many open-air, waterfront clubs.</p>
-				<button id="like-button">Like</button>
-				<button id="dislike-button">Dislike</button>
-				<div>
-				<span id="like-count">0</span> likes, 
-				<span id="dislike-count">0</span> dislikes
-				</div>
-			</div>
-			<div class="container article-world">
-				<h2>Tyrol Austria</h2>
-				<img class="image" src="https://www.shutterstock.com/image-photo/village-inneralpbach-alpbach-valleyaustriatirol-260nw-543923905.jpg" alt="Random Image">
-				<p class="description">Tyrol is a western Austrian state in the Alps that’s known for its ski resorts, historic sites and folk traditions. The capital city, Innsbruck, surrounded by mountains, is home to Habsburg Empire landmarks like baroque-style Hofburg Palace and Gothic Hofkirche Church. The city’s symbol is the 15th-century Goldenes Dachl, a loggia topped with gleaming copper tiles commissioned by Habsburg Emperor Maximilian I.</p>
-				<button id="like-button">Like</button>
-				<button id="dislike-button">Dislike</button>
-				<div>
-				<span id="like-count">0</span> likes, 
-				<span id="dislike-count">0</span> dislikes
-				</div>
-			</div>
-			<div class="container article-world">
-				<h2>Matka Canyon Macedonia</h2>
-				<img class="image" src="https://img.particlenews.com/img/id/4C3iZg_0l8rYzE100?type=thumbnail_1600x1200" alt="Random Image">
-				<p class="description">Matka is a canyon located west of central Skopje, North Macedonia. Covering roughly 5,000 hectares, Matka is one of the most popular outdoor destinations in North Macedonia and is home to several medieval monasteries. The Matka Lake within the Matka Canyon is the oldest artificial lake in the country.</p>
-				<button id="like-button">Like</button>
-				<button id="dislike-button">Dislike</button>
-				<div>
-				<span id="like-count">0</span> l = ikes, 
-				<span id="dislike-count">0</span> dislikes
-				</div>
-			</div>
-			</section>
-			<section class="right">
-				<img src="https://media1.giphy.com/media/l3E6Ek4zKHFXGOzFm/giphy.gif" alt="image"/>
-			</section>
+			<span class="js-include-json" data-filename="data/articles.json"></span>
+		</section>
+		<section class="right">
+			<img class="sidebar-img" src="https://media1.giphy.com/media/l3E6Ek4zKHFXGOzFm/giphy.gif" alt="image" />
+		</section>
 	</main>
-	<footer>
-			<a href = "https://www.facebook.com/" alt = "coni"><i class="fab fa-facebook-f"></i></a>
-			<a href = "https://www.youtube.com/" alt = "coni"><i class="fab fa-youtube"></i></a>
-			<a href = "https://twitter.com/" alt = "coni"><i class="fab fa-twitter"></i></a>
-		<p>&copy; 2023 Html Css Js Project. All rights reserved.</p>
-	</footer>
-	<script src = "js/script.js"></script>
+	<span class="js-include-html" data-filename="partial/footer.html"></span>
+	<script src="js/script.js"></script>
 	<script src="js/jqueryScript.js"></script>
 </body>
+
 </html>

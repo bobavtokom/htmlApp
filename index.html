@@ -21,16 +21,8 @@
 	
 		}
 	</style>
-	<header>
-		<h1>Our project</h1>
-		<nav>
-			<ul>
-				<li><a href="htmlApp.html">Home</a></li>
-				<li><a href="about.html">About</a></li>
-				<li><a href="contact.html">Contact</a></li>
-			</ul>
-		</nav>
-	</header>
+	<span class="js-include-html" data-filename="partial/header.html"></span>
+
 
 	<div class="slider-container">
 
@@ -50,6 +42,9 @@
 			</section>
 		</main>
 	</div>
+	<span class="js-include-html" data-filename="partial/footer.html"></span>
+	<script src="js/script.js"></script>
+	<script src="js/jqueryScript.js"></script>
 	<script>
 		const slides = document.querySelectorAll('.slide');
 		const slideInterval = setInterval(nextSlide, 5000);

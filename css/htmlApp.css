@@ -10,11 +10,10 @@
 		font-size: 16px;
 		line-height: 1.5;
 	}
-	header img{
-		margin-left: 30%;
+
+	header img {
+		margin-left: 10%;
 		position: relative;
-		height: 100px;
-		width: 150px;
 		border-radius: 5px;
 	}
 
@@ -28,7 +27,8 @@
 		background-image: url("https://www.froschluxurytravel.com/img/pages/header/13-experience-the-mana-of-tahiti.r3eov5.1920w.jpeg");
 		color: #fff;
 	}
-	.right img{
+
+	.right img {
 		border-radius: 5px;
 	}
 
@@ -50,10 +50,11 @@
 		padding: 5px;
 
 	}
-	nav a:hover{
-	scale: 2;
-	background-color: #dccba9;
-	border-radius: 5%;
+
+	nav a:hover {
+		scale: 2;
+		background-color: #dccba9;
+		border-radius: 5%;
 	}
 
 
@@ -88,9 +89,11 @@
 	.center {
 		grid-column: 2 / 3;
 	}
+
 	.search-input {
 		padding: 5px;
 	}
+
 	.search {
 		padding: 5px;
 	}
@@ -110,7 +113,8 @@
 		height: 30px;
 		border-radius: 5%;
 	}
-	nav a.active:hover{
+
+	nav a.active:hover {
 		scale: 2;
 		opacity: 0.7;
 	}
@@ -125,10 +129,10 @@
 		color: #f7f9f3;
 		transition: all 0.3s ease-in-out;
 	}
-	#sidebar-img {
-		
-		width: 200px;
-		
+
+	.sidebar-img {
+
+		width: 100%;
 
 	}
 
@@ -209,10 +213,25 @@
 		border-radius: 20px;
 	}
 
-	h1>a:link { text-decoration: none; color: #f1f1f1; }
-	h1>a:visited { text-decoration: none; color: #f1f1f1; }
-	h1>a:hover { text-decoration: none; color: #f1f1f1; }
-	h1>a:active { text-decoration: none; color: #f1f1f1;}
+	h1>a:link {
+		text-decoration: none;
+		color: #f1f1f1;
+	}
+
+	h1>a:visited {
+		text-decoration: none;
+		color: #f1f1f1;
+	}
+
+	h1>a:hover {
+		text-decoration: none;
+		color: #f1f1f1;
+	}
+
+	h1>a:active {
+		text-decoration: none;
+		color: #f1f1f1;
+	}
 
 	section>h1 {
 		color: #f1f1f1;
@@ -295,7 +314,7 @@
 	}
 
 	.btn>a {
-		color:#f1f1f1;
+		color: #f1f1f1;
 		text-decoration: none;
 	}
 
@@ -312,11 +331,19 @@
 			transform: rotate(360deg);
 		}
 	}
+
 	#x-close {
 		position: absolute;
 		right: 5px;
 		top: 5px;
 	}
+
 	#x-close:hover {
 		scale: 1.2;
+	}
+
+	.logo {
+		border-radius: 50%;
+		width: 70px;
+		aspect-ratio: 1 / 1;
 	}

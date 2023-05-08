@@ -10,21 +10,7 @@
 </head>
 
 <body>
-	<header>
-		<h1><a href="index.html">Our project</a></h1>
-		<nav>
-			<ul>
-				<li><a href="htmlApp.html">Home</a></li>
-				<li><a href="about.html">About</a></li>
-				<li><a href="#" class="active">Contact</a></li>
-				<form action="https://www.google.com/search" method="get">
-					<label for="search"></label>
-					<input type="text" id="search" name="q" placeholder="Google">
-					<button type="submit">Search</button>
-				</form>
-			</ul>
-		</nav>
-	</header>
+	<span class="js-include-html" data-filename="partial/header.html"></span>
 	<main>
 		<!-- Left Side bar -->
 		<span class="js-include-html" data-filename="partial/_sidebar.htm"></span>
@@ -33,10 +19,7 @@
 			<p>Contact page</p>
 		</section>
 	</main>
-
-	<footer>
-		<p>&copy; 2023 Html Css Js Project. All rights reserved.</p>
-	</footer>
+	<span class="js-include-html" data-filename="partial/footer.html"></span>
 	<script src = "js/script.js"></script>
 	<script src="js/jqueryScript.js"></script>
 </body>
