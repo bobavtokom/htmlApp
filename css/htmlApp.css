@@ -76,7 +76,7 @@
 
 	.left {
 		grid-column: 1 / 2;
-		margin-left: 5%;
+		margin-left: 10%;
 	}
 
 
@@ -124,6 +124,12 @@
 		background-color: #42bebe;
 		color: #f7f9f3;
 		transition: all 0.3s ease-in-out;
+	}
+	#sidebar-img {
+		
+		width: 200px;
+		
+
 	}
 
 	#sidebar ul {
@@ -251,6 +257,7 @@
 		background-color: #28deef;
 		color: #fff;
 		font-size: 20px;
+		margin-right: 2px;
 		cursor: pointer;
 		left: 0;
 	}
