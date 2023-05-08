@@ -30,7 +30,44 @@
 		<span class="js-include-html" data-filename="partial/_sidebar.htm"></span>
 
 		<section class="center">
-			<p>Contact page</p>
+			<h3>Please contact us for everything you need about for your journey or send us a review.</h3>
+			<br>
+			<div class="contact-form">
+			<form action="https://formsubmit.co/difftravelagency@yahoo.com" method="POST">
+			<!--<form action="mailto:difftravelagency@yahoo.com" method="POST">	-->
+			
+				<label for="fname">Full Name</label>
+				<input type="text" id="fName" name="Name" placeholder="Full name..">
+				<br>
+
+				<label for="lname">Your e-mail</label>
+				<input type="text" id="email" name="Email" placeholder="Your email..">
+				<br>
+
+				<label for="cont">Continent</label>
+				<select id="continent" name="Continent">
+					<option value="Europe">Europe</option>
+					<option value="Asia">Asia</option>
+					<option value="Africa">Africa</option>
+					<option value="NorthAmerica">North America</option>
+					<option value="SouthAmerica">South America</option>
+					<option value="Australia">Australia/Oceania</option>
+					<option value="Antarctica">Antarctica</option>
+				</select>
+				<br>
+
+				<label for="subject">Subject</label>
+				<textarea id="message" name="Message" placeholder="Write something.." style="height:200px"></textarea>
+				<br>
+
+				<input type="submit" value="Send">
+				<input type="hidden" name="_autoresponse" value="The email is succesfuly sent!">
+				<!--<input type="hidden" name="_next" value="./partial/successfullySent.htm">-->
+				<!--<span class="js-include-html" data-filename="partial/_sidebar.htm"></span>-->
+			</form>
+			</div>
+
+
 		</section>
 	</main>
 
