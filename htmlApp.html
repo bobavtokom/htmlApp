@@ -4,16 +4,19 @@
 <head>
 	<title>Html Css Js Project</title>
 	<link rel="stylesheet" type="text/css" href="css/htmlApp.css">
+	<link rel="stylesheet" type="text/css" href="css/accordion.css">
 	<script src="https://kit.fontawesome.com/6a7b1ca22e.js" crossorigin="anonymous"></script>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
 	<script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+	<script src="js/functions.js"></script>
 </head>
 
 <body>
-	<span class="js-include-html" data-filename="partial/header.html"></span>
+	<span class="js-include-html" data-filename="partial/header.html" data-function="ActivateNavbarLink()"></span>
 
 	<main>
-		<span class="js-include-html" data-filename="partial/_sidebar.htm"></span>
+		<span class="js-include-html" data-filename="partial/_sidebar.htm" data-function="InitSidebar()"></span>
+
 		<section class="left">
 			<img class="sidebar-img" src="https://i.pinimg.com/originals/d8/ed/36/d8ed368c34088f388b2a55a202e42ea2.gif"
 				alt="image">

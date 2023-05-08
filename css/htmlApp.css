@@ -1,374 +1,380 @@
-	* {
-		margin: 0;
-		padding: 0;
-		box-sizing: border-box;
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+
+body {
+	font-family: Arial, sans-serif;
+	font-size: 16px;
+	line-height: 1.5;
+}
+
+header {
+	display: flex;
+	flex-direction: row;
+	justify-content: right;
+	align-items: center;
+	padding: 10px;
+	background-color: #31c2c7;
+	color: #fff;
+}
+
+.right img {
+	border-radius: 5px;
+}
+
+header h1 {
+	font-size: 32px;
+	margin: 0;
+}
+
+#nav_bar {
+	flex-grow: 8;
+}
+
+#logo-div {
+	flex-grow: 1;
+}
+
+#logo {
+	border-radius: 50%;
+	width: 70px;
+	aspect-ratio: 1 / 1;
+	position: relative;
+	/* scale: 0.7; */
+}
+
+nav ul {
+	list-style: none;
+	display: grid;
+	grid-gap: 10px;
+	grid-auto-flow: column;
+}
+
+nav a {
+	color: #fff;
+	text-decoration: none;
+	padding: 5px;
+
+}
+
+nav a:hover {
+	scale: 2;
+	background-color: #dccba9;
+	border-radius: 5%;
+}
+
+
+main {
+	display: grid;
+	grid-template-columns: 1fr 2fr 1fr;
+	grid-gap: 20px;
+	padding: 20px;
+}
+
+section {
+	padding: 20px;
+	background-color: #f1f1f1;
+}
+
+section h2 {
+	margin: 0;
+}
+
+
+.left {
+	grid-column: 1 / 2;
+	margin-left: 10%;
+}
+
+
+.right {
+	grid-column: 3 / 4;
+}
+
+
+.center {
+	grid-column: 2 / 3;
+}
+
+.search-input {
+	padding: 5px;
+}
+
+.search {
+	padding: 5px;
+}
+
+
+footer {
+	padding: 10px;
+	background-color: #31c2c7;
+	color: #fff;
+	text-align: center;
+}
+
+nav a.active {
+	background-color: #ccc;
+	color: #100d0d;
+	width: 60px;
+	height: 30px;
+	border-radius: 5%;
+}
+
+nav a.active:hover {
+	scale: 2;
+	opacity: 0.7;
+}
+
+#sidebar {
+	position: fixed;
+	top: 0;
+	left: -250px;
+	width: 250px;
+	height: 100%;
+	background-color: #42bebe;
+	color: #f7f9f3;
+	transition: all 0.3s ease-in-out;
+}
+
+.sidebar-img {
+
+	width: 100%;
+
+}
+
+#sidebar ul {
+	list-style: none;
+	padding: 0;
+	margin: 0;
+}
+
+#sidebar li {
+	padding: 10px;
+	/* border-bottom: 1px solid #cbaaaa; */
+}
+
+#sidebar li:last-child {
+	border-bottom: none;
+}
+
+#sidebar a {
+	color: #fff;
+	text-decoration: none;
+}
+
+#sidebar.active {
+	left: 0;
+}
+
+#sidebar.active+.menu-toggle {
+	right: -50px;
+}
+
+.sidebar-text {
+	writing-mode: vertical-rl;
+	transform: rotate(180deg);
+}
+
+.slider-container {
+	position: relative;
+	height: 100vh;
+
+}
+
+.slide {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background-size: cover;
+	background-position: center;
+}
+
+.slide:nth-child(1) {
+	background-image: url('https://www.thetimes.co.uk/imageserver/image/%2Fmethode%2Ftimes%2Fprod%2Fweb%2Fbin%2F8fb45926-a86d-11ed-b108-3c207a871bac.jpg?crop=1500%2C1000%2C0%2C0');
+}
+
+.slide:nth-child(2) {
+	background-image: url('https://www.shutterstock.com/image-photo/maldiv-beach-resort-panoramic-landscaps-260nw-1051887026.jpg');
+}
+
+.slide:nth-child(3) {
+	background-image: url('https://idsb.tmgrup.com.tr/ly/uploads/images/2021/09/24/146502.jpg');
+}
+
+.slide {
+	opacity: 0;
+	transition: opacity 1s ease-in-out;
+}
+
+.slide.active {
+	opacity: 1;
+}
+
+#index-text {
+	z-index: 15;
+	text-align: center;
+	background-color: rgb(49 194 199 / 60%);
+	border-radius: 20px;
+}
+
+h1>a:link {
+	text-decoration: none;
+	color: #f1f1f1;
+}
+
+h1>a:visited {
+	text-decoration: none;
+	color: #f1f1f1;
+}
+
+h1>a:hover {
+	text-decoration: none;
+	color: #f1f1f1;
+}
+
+h1>a:active {
+	text-decoration: none;
+	color: #f1f1f1;
+}
+
+section>h1 {
+	color: #f1f1f1;
+}
+
+.container {
+	max-width: 800px;
+	margin: 10px auto;
+	padding: 20px;
+	background-color: #fff;
+	border-radius: 10px;
+	box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+.article-world>button {
+	padding: 0px 10px;
+	cursor: pointer;
+}
+
+.image {
+	display: block;
+	max-width: 100%;
+	height: auto;
+	margin: 0 auto;
+	border-radius: 10px;
+	box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+.description {
+	margin-top: 20px;
+	font-size: 18px;
+	line-height: 1.5;
+	text-align: justify;
+	margin-bottom: 15px;
+}
+
+.spin-button {
+	position: fixed;
+	padding: 5px;
+	border-radius: 5px;
+	border: 1px solid rgb(49, 169, 209);
+	background-color: #31c2c7;
+	color: #fff;
+	font-size: 20px;
+	margin-right: 2px;
+	cursor: pointer;
+	left: 0;
+}
+
+.spin-button:hover {
+	animation: spin 1s linear forwards;
+}
+
+.spin-button:hover .hover-text {
+	display: inline-block;
+}
+
+.initial-text {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+}
+
+.hover-text {
+	display: none;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+}
+
+.btn {
+	background-color: #31c2c7;
+	border-radius: 10px;
+	padding: 10px;
+	cursor: pointer;
+	width: fit-content;
+	margin: auto;
+}
+
+.btn>a {
+	color: #f1f1f1;
+	text-decoration: none;
+}
+
+.btn:hover {
+	animation: spin 1s linear forwards;
+}
+
+@keyframes spin {
+	0% {
+		transform: rotate(0deg);
 	}
 
-
-	body {
-		font-family: Arial, sans-serif;
-		font-size: 16px;
-		line-height: 1.5;
+	100% {
+		transform: rotate(360deg);
 	}
-
-	header {
-		display: flex;
-		flex-direction: row;
-		justify-content: right;
-		align-items: center;
-		padding: 10px;
-		background-color: #31c2c7;
-		color: #fff;
-	}
-
-	.right img {
-		border-radius: 5px;
-	}
-
-	header h1 {
-		font-size: 32px;
-		margin: 0;
-	}
-	#nav_bar{
-		flex-grow: 8;
-	}
-
-	#logo-div{
-		flex-grow: 1;
-	}
-	#logo {
-		border-radius: 50%;
-		width: 70px;
-		aspect-ratio: 1 / 1;
-		position: relative;
-		scale: 0.7;
-	}
-
-	nav ul {
-		list-style: none;
-		display: grid;
-		grid-gap: 10px;
-		grid-auto-flow: column;
-	}
-
-	nav a {
-		color: #fff;
-		text-decoration: none;
-		padding: 5px;
-
-	}
-
-	nav a:hover {
-		scale: 2;
-		background-color: #dccba9;
-		border-radius: 5%;
-	}
-
-
-	main {
-		display: grid;
-		grid-template-columns: 1fr 2fr 1fr;
-		grid-gap: 20px;
-		padding: 20px;
-	}
-
-	section {
-		padding: 20px;
-		background-color: #f1f1f1;
-	}
-
-	section h2 {
-		margin: 0;
-	}
-
-
-	.left {
-		grid-column: 1 / 2;
-		margin-left: 10%;
-	}
-
-
-	.right {
-		grid-column: 3 / 4;
-	}
-
-
-	.center {
-		grid-column: 2 / 3;
-	}
-
-	.search-input {
-		padding: 5px;
-	}
-
-	.search {
-		padding: 5px;
-	}
-
-
-	footer {
-		padding: 10px;
-		background-color: #333;
-		color: #fff;
-		text-align: center;
-	}
-
-	nav a.active {
-		background-color: #ccc;
-		color: #100d0d;
-		width: 60px;
-		height: 30px;
-		border-radius: 5%;
-	}
-
-	nav a.active:hover {
-		scale: 2;
-		opacity: 0.7;
-	}
-
-	#sidebar {
-		position: fixed;
-		top: 0;
-		left: -250px;
-		width: 250px;
-		height: 100%;
-		background-color: #42bebe;
-		color: #f7f9f3;
-		transition: all 0.3s ease-in-out;
-	}
-
-	.sidebar-img {
-
-		width: 100%;
-
-	}
-
-	#sidebar ul {
-		list-style: none;
-		padding: 0;
-		margin: 0;
-	}
-
-	#sidebar li {
-		padding: 10px;
-		border-bottom: 1px solid #cbaaaa;
-	}
-
-	#sidebar li:last-child {
-		border-bottom: none;
-	}
-
-	#sidebar a {
-		color: #fff;
-		text-decoration: none;
-	}
-
-	#sidebar.active {
-		left: 0;
-	}
-
-	#sidebar.active+.menu-toggle {
-		right: -50px;
-	}
-
-	.sidebar-text {
-		writing-mode: vertical-rl;
-		transform: rotate(180deg);
-	}
-
-	.slider-container {
-		position: relative;
-		height: 100vh;
-
-	}
-
-	.slide {
-		position: absolute;
-		top: 0;
-		left: 0;
-		width: 100%;
-		height: 100%;
-		background-size: cover;
-		background-position: center;
-	}
-
-	.slide:nth-child(1) {
-		background-image: url('https://www.thetimes.co.uk/imageserver/image/%2Fmethode%2Ftimes%2Fprod%2Fweb%2Fbin%2F8fb45926-a86d-11ed-b108-3c207a871bac.jpg?crop=1500%2C1000%2C0%2C0');
-	}
-
-	.slide:nth-child(2) {
-		background-image: url('https://www.shutterstock.com/image-photo/maldiv-beach-resort-panoramic-landscaps-260nw-1051887026.jpg');
-	}
-
-	.slide:nth-child(3) {
-		background-image: url('https://idsb.tmgrup.com.tr/ly/uploads/images/2021/09/24/146502.jpg');
-	}
-
-	.slide {
-		opacity: 0;
-		transition: opacity 1s ease-in-out;
-	}
-
-	.slide.active {
-		opacity: 1;
-	}
-
-	#index-text {
-		z-index: 15;
-		text-align: center;
-		background-color: rgb(49 194 199 / 60%);
-		border-radius: 20px;
-	}
-
-	h1>a:link {
-		text-decoration: none;
-		color: #f1f1f1;
-	}
-
-	h1>a:visited {
-		text-decoration: none;
-		color: #f1f1f1;
-	}
-
-	h1>a:hover {
-		text-decoration: none;
-		color: #f1f1f1;
-	}
-
-	h1>a:active {
-		text-decoration: none;
-		color: #f1f1f1;
-	}
-
-	section>h1 {
-		color: #f1f1f1;
-	}
-
-	.container {
-		max-width: 800px;
-		margin: 10px auto;
-		padding: 20px;
-		background-color: #fff;
-		border-radius: 10px;
-		box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-	}
-
-	.article-world>button {
-		padding: 0px 10px;
-		cursor: pointer;
-	}
-
-	.image {
-		display: block;
-		max-width: 100%;
-		height: auto;
-		margin: 0 auto;
-		border-radius: 10px;
-		box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-	}
-
-	.description {
-		margin-top: 20px;
-		font-size: 18px;
-		line-height: 1.5;
-		text-align: justify;
-		margin-bottom: 15px;
-	}
-
-	.spin-button {
-		position: fixed;
-		padding: 5px;
-		border-radius: 5px;
-		border: 1px solid rgb(49, 169, 209);
-		background-color: #28deef;
-		color: #fff;
-		font-size: 20px;
-		margin-right: 2px;
-		cursor: pointer;
-		left: 0;
-	}
-
-	.spin-button:hover {
-		animation: spin 1s linear forwards;
-	}
-
-	.spin-button:hover .hover-text {
-		display: inline-block;
-	}
-
-	.initial-text {
-		position: absolute;
-		top: 50%;
-		left: 50%;
-		transform: translate(-50%, -50%);
-	}
-
-	.hover-text {
-		display: none;
-		position: absolute;
-		top: 50%;
-		left: 50%;
-		transform: translate(-50%, -50%);
-	}
-
-	.btn {
-		background-color: #31c2c7;
-		border-radius: 10px;
-		padding: 10px;
-		cursor: pointer;
-		width: fit-content;
-		margin: auto;
-	}
-
-	.btn>a {
-		color: #f1f1f1;
-		text-decoration: none;
-	}
-
-	.btn:hover {
-		animation: spin 1s linear forwards;
-	}
-
-	@keyframes spin {
-		0% {
-			transform: rotate(0deg);
-		}
-
-		100% {
-			transform: rotate(360deg);
-		}
-	}
-
-	#x-close {
-		position: absolute;
-		right: 5px;
-		top: 5px;
-	}
-
-	#x-close:hover {
-		scale: 1.2;
-	}
-	.contact-form input[type=text], select, textarea {
-		width: 100%;
-		padding: 12px;
-		border: 1px solid #ccc;
-		border-radius: 4px;
-		box-sizing: border-box;
-		margin-top: 6px;
-		margin-bottom: 16px;
-		resize: vertical;
-	  }
-	  
-	  input[type=submit] {
-		border: 1px solid rgb(49, 169, 209);
-		background-color: #31c2c7;
-		color: white;
-		padding: 12px 20px;
-		border: none;
-		border-radius: 4px;
-		cursor: pointer;
-	  }
-	  
-	  input[type=submit]:hover {
-		background-color: #28deef;
-	  }
+}
+
+#x-close {
+	position: absolute;
+	right: 5px;
+	top: 5px;
+	cursor: pointer;
+}
+
+#x-close:hover {
+	scale: 1.2;
+}
+
+.contact-form input[type=text],
+select,
+textarea {
+	width: 100%;
+	padding: 12px;
+	border: 1px solid #ccc;
+	border-radius: 4px;
+	box-sizing: border-box;
+	margin-top: 6px;
+	margin-bottom: 16px;
+	resize: vertical;
+}
+
+input[type=submit] {
+	border: 1px solid rgb(49, 169, 209);
+	background-color: #31c2c7;
+	color: white;
+	padding: 12px 20px;
+	border: none;
+	border-radius: 4px;
+	cursor: pointer;
+}
+
+input[type=submit]:hover {
+	background-color: #28deef;
+}

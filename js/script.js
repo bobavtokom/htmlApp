@@ -55,29 +55,17 @@ const IncludeFromHtml = () => {
 	let includeElement = document.querySelector(".js-include-html");
 	if (includeElement !== null) {
 		let filename = includeElement.getAttribute("data-filename");
+		let callbackFunction = includeElement.getAttribute("data-function");
 		if (filename) {
 			xhttp = new XMLHttpRequest();
 			xhttp.onreadystatechange = function () {
 				if (this.readyState == 4) {
-					if (this.status == 200) { includeElement.innerHTML = this.responseText; }
-					
-					$('.menu li:has(ul)').click(function(e) {
-						e.preventDefault();
-				
-						if($(this).hasClass('activado')) {
-							$(this).removeClass('activado');
-							$(this).children('ul').slideUp();
-						} else {
-							$('.menu li ul').slideUp();
-							$('.menu li').removeClass('activado');
-							$(this).addClass('activado');
-							$(this).children('ul').slideDown();
+					if (this.status == 200) { 
+						includeElement.innerHTML = this.responseText; 
+						if(callbackFunction) {
+							eval(callbackFunction);
 						}
-				
-						$('.menu li ul li a').click(function() {
-							window.location.href = $(this).attr('href');
-						})
-					});
+					}
 					includeElement.classList.remove("js-include-html");
 					IncludeFromHtml();
 				}
