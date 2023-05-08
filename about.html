@@ -4,27 +4,15 @@
 <head>
 	<title>Html Css Js Project</title>
 	<link rel="stylesheet" type="text/css" href="css/htmlApp.css">
+	<link rel="stylesheet" type="text/css" href="css/sidebar-accordion.css">
 	<script src="https://kit.fontawesome.com/6a7b1ca22e.js" crossorigin="anonymous"></script>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
-	<script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
 </head>
 
 <body>
-	<header>
-		<h1><a href="index.html">Our project</a></h1>
-		<nav>
-			<ul>
-				<li><a href="htmlApp.html">Home</a></li>
-				<li><a href="#" class="active">About</a></li>
-				<li><a href="contact.html">Contact</a></li>
-				<form action="https://www.google.com/search" method="get">
-					<label for="search"></label>
-					<input type="text" id="search" name="q" placeholder="Google">
-					<button type="submit">Search</button>
-				</form>
-			</ul>
-		</nav>
-	</header>
+	<span class="js-include-html" data-filename="partial/header.html"></span>
+
 	<main>
 		<!-- Left Side bar -->
 		<span class="js-include-html" data-filename="partial/_sidebar.htm"></span>
@@ -33,12 +21,10 @@
 			<p>About us</p>
 		</section>
 	</main>
-	<footer>
-		<h1>Footer section</h1>
-		<p>&copy; 2023 Html Css Js Project. All rights reserved.</p>
-	</footer>
-	<script src="js/script.js"></script>
+	<span class="js-include-html" data-filename="partial/footer.html"></span>
+	<script src = "js/script.js"></script>
 	<script src="js/jqueryScript.js"></script>
+	<script src="js/sidebar-accordion.js"></script>
 </body>
 
 </html>

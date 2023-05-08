@@ -6,48 +6,26 @@
 	<link rel="stylesheet" type="text/css" href="css/htmlApp.css">
 	<script src="https://kit.fontawesome.com/6a7b1ca22e.js" crossorigin="anonymous"></script>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 	<script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
 </head>
 
 <body>
+	<span class="js-include-html" data-filename="partial/header.html"></span>
 
-	<header>
-		<h1><a href="index.html">Our project</a></h1>
-		<nav>
-			<ul>
-				<li><a href="#" class="active">Home</a></li>
-				<li><a href="about.html">About</a></li>
-				<li><a href="contact.html">Contact</a></li>
-				<form action="https://www.google.com/search" method="get" target="_blank">
-					<label for="search"></label>
-					<input type="text" id="search" name="q" placeholder="Google">
-					<button type="submit">Search</button>
-				</form>
-			</ul>
-		</nav>
-	</header>
 	<main>
-		<!-- Left Side bar -->
 		<span class="js-include-html" data-filename="partial/_sidebar.htm"></span>
-
 		<section class="left">
-			<h2>Left Section left</h2>
-			<p>Some elements here</p>
+			<img class="sidebar-img" src="https://i.pinimg.com/originals/d8/ed/36/d8ed368c34088f388b2a55a202e42ea2.gif"
+				alt="image">
 		</section>
-
-		<section class="center js-include-json" data-filename="data/articles.json"></section>
-		
+		<section class="center">
+			<span class="js-include-json" data-filename="data/articles.json"></span>
+		</section>
 		<section class="right">
-			<h2>Right Section</h2>
-			<p>Some elements here</p>
-			<p>Some elements here</p>
+			<img class="sidebar-img" src="https://media1.giphy.com/media/l3E6Ek4zKHFXGOzFm/giphy.gif" alt="image" />
 		</section>
 	</main>
-	<footer>
-		<h1>Footer section</h1>
-		<p>&copy; 2023 Html Css Js Project. All rights reserved.</p>
-	</footer>
+	<span class="js-include-html" data-filename="partial/footer.html"></span>
 	<script src="js/script.js"></script>
 	<script src="js/jqueryScript.js"></script>
 </body>
