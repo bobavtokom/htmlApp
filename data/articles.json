@@ -1,6 +1,7 @@
 [
     {
         "id": "1",
+        "class": "",
         "title": "Skiathos Greece",
         "imageUrl": "https://travelpassionate.com/wp-content/uploads/2020/01/Lalaria-Beach-Skiathos.jpg",
         "imageText": "Skiathos Greece",
@@ -8,6 +9,7 @@
     },
     {
         "id": "2",
+        "class": "",
         "title": "Tyrol Austria",
         "imageUrl": "https://www.shutterstock.com/image-photo/village-inneralpbach-alpbach-valleyaustriatirol-260nw-543923905.jpg",
         "imageText": "Tyrol Austria",

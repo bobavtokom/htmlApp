@@ -1,6 +1,6 @@
 const LikeButtonClick = e => {
 	let articleElement = e.srcElement.parentElement;
-	if(e.srcElement.classList.contains("fa")){
+	if (e.srcElement.classList.contains("fa")) {
 		articleElement = e.srcElement.parentElement.parentElement;
 	}
 	const likeCountElement = articleElement.querySelector('#like-count');
@@ -15,7 +15,7 @@ const LikeButtonClick = e => {
 
 const DislikeButtonClick = e => {
 	let articleElement = e.srcElement.parentElement;
-	if(e.srcElement.classList.contains("fa")){
+	if (e.srcElement.classList.contains("fa")) {
 		articleElement = e.srcElement.parentElement.parentElement;
 	}
 	const dislikeCountElement = articleElement.querySelector('#dislike-count');
@@ -60,9 +60,9 @@ const IncludeFromHtml = () => {
 			xhttp = new XMLHttpRequest();
 			xhttp.onreadystatechange = function () {
 				if (this.readyState == 4) {
-					if (this.status == 200) { 
-						includeElement.innerHTML = this.responseText; 
-						if(callbackFunction) {
+					if (this.status == 200) {
+						includeElement.innerHTML = this.responseText;
+						if (callbackFunction) {
 							eval(callbackFunction);
 						}
 					}
@@ -77,6 +77,11 @@ const IncludeFromHtml = () => {
 }
 
 const IncludeFromJSON = () => {
+	const urlParams = new URLSearchParams(window.location.search);
+	let filterClass = urlParams.get("filter");
+	if (!filterClass) {
+		filterClass = "";
+	}
 	let includeElement = document.querySelector(".js-include-json");
 	if (includeElement !== null) {
 		let filename = includeElement.getAttribute("data-filename");
@@ -88,18 +93,20 @@ const IncludeFromJSON = () => {
 						let output = "";
 						const response = JSON.parse(this.responseText);
 						response.forEach(article => {
-							if(article)
-							output += `<div class="container article-world ${article.class}" data-article-id="${article.id}">
-								<h2>${article.title}</h2>
-								<img class="image" src="${article.imageUrl}" alt="${article.imageText}">
-								<p class="description">${article.description}</p>
-								<button id="like-button"><i class="fa fa-thumbs-up"></i> Like</button>
-								<button id="dislike-button"><i class="fa fa-thumbs-down"></i> Dislike</button>
-								<div>
-									<span id="like-count">0</span> likes,
-									<span id="dislike-count">0</span> dislikes
-								</div>
-							</div>`;
+							var classes=article.class;
+							if (classes.includes(filterClass)) {
+								output += `<div class="container article-world ${article.class}" data-article-id="${article.id}">
+											<h2>${article.title}</h2>
+											<img class="image" src="${article.imageUrl}" alt="${article.imageText}">
+											<p class="description">${article.description}</p>
+											<button id="like-button"><i class="fa fa-thumbs-up"></i> Like</button>
+											<button id="dislike-button"><i class="fa fa-thumbs-down"></i> Dislike</button>
+											<div>
+												<span id="like-count">0</span> likes,
+												<span id="dislike-count">0</span> dislikes
+											</div>
+											</div>`;
+							}
 						});
 						includeElement.innerHTML = output;
 
