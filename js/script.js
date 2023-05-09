@@ -88,7 +88,8 @@ const IncludeFromJSON = () => {
 						let output = "";
 						const response = JSON.parse(this.responseText);
 						response.forEach(article => {
-							output += `<div class="container article-world" data-article-id="${article.id}">
+							if(article)
+							output += `<div class="container article-world ${article.class}" data-article-id="${article.id}">
 								<h2>${article.title}</h2>
 								<img class="image" src="${article.imageUrl}" alt="${article.imageText}">
 								<p class="description">${article.description}</p>
