@@ -44,10 +44,8 @@ const InitLikesAndDislikes = articleElement => {
 
 function openLeftSidebar() {
 	document.getElementById("sidebar").style.left = "0px";
-	// document.querySelector(".left-sidebar").style.left = "0";
 }
 function closeLeftSidebar() {
-	// document.querySelector(".left-sidebar").style.left = "-250px";
 	document.getElementById("sidebar").style.left = "-250px";
 }
 
@@ -96,7 +94,7 @@ const IncludeFromJSON = () => {
 							var classes=article.class;
 							if (classes.includes(filterClass)) {
 								output += `<div class="container article-world ${article.class}" data-article-id="${article.id}">
-											<h2>${article.title}</h2>
+											<h2 class = "article-title">${article.title}</h2>
 											<img class="image" src="${article.imageUrl}" alt="${article.imageText}">
 											<p class="description">${article.description}</p>
 											<button id="like-button"><i class="fa fa-thumbs-up"></i> Like</button>

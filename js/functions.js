@@ -31,3 +31,19 @@ function ActivateNavbarLink() {
         }
     });
 }
+function searchForArticle() {
+    var input, filter, title, i, txtValue;
+    input = document.getElementById('myInput');
+    span = document.getElementsByClassName("container article-world");
+    filter = input.value.toUpperCase();
+    title = document.getElementsByClassName('article-title');
+  
+    for (i = 0; i < title.length; i++) {
+      txtValue = title[i].textContent || title[i].innerText;
+      if (txtValue.toUpperCase().indexOf(filter) > -1) {
+        title[i].parentNode.style.display = "block";
+      } else {
+      title[i].parentNode.style.display = "none";
+      }
+    }
+  }
