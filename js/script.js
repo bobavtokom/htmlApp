@@ -1,13 +1,9 @@
 const LikeButtonClick = e => {
 	let articleElement = e.srcElement.parentElement;
-	if (e.srcElement.classList.contains("fa")) {
-		articleElement = e.srcElement.parentElement.parentElement;
-	}
 	const likeCountElement = articleElement.querySelector('#like-count');
 	const articleId = articleElement.getAttribute('data-article-id');
 	let storageKey = 'likes-' + articleId;
 	let storageVal = parseInt(localStorage.getItem(storageKey)) || 0;
-
 	storageVal++;
 	likeCountElement.textContent = storageVal;
 	localStorage.setItem(storageKey, storageVal);
@@ -15,14 +11,10 @@ const LikeButtonClick = e => {
 
 const DislikeButtonClick = e => {
 	let articleElement = e.srcElement.parentElement;
-	if (e.srcElement.classList.contains("fa")) {
-		articleElement = e.srcElement.parentElement.parentElement;
-	}
 	const dislikeCountElement = articleElement.querySelector('#dislike-count');
 	const articleId = articleElement.getAttribute('data-article-id');
 	let storageKey = 'dislikes-' + articleId;
 	let storageVal = parseInt(localStorage.getItem(storageKey)) || 0;
-
 	storageVal++;
 	dislikeCountElement.textContent = storageVal;
 	localStorage.setItem(storageKey, storageVal);
@@ -30,12 +22,10 @@ const DislikeButtonClick = e => {
 
 const InitLikesAndDislikes = articleElement => {
 	const articleId = articleElement.getAttribute('data-article-id');
-
 	const likeCountElement = articleElement.querySelector('#like-count');
 	let storageKey = 'likes-' + articleId;
 	let storageVal = parseInt(localStorage.getItem(storageKey)) || 0;
 	likeCountElement.textContent = storageVal;
-
 	const dislikeCountElement = articleElement.querySelector('#dislike-count');
 	storageKey = 'dislikes-' + articleId;
 	storageVal = parseInt(localStorage.getItem(storageKey)) || 0;

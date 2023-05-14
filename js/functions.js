@@ -38,12 +38,20 @@ function searchForArticle() {
     filter = input.value.toUpperCase();
     title = document.getElementsByClassName('article-title');
   
-    for (i = 0; i < title.length; i++) {
-      txtValue = title[i].textContent || title[i].innerText;
-      if (txtValue.toUpperCase().indexOf(filter) > -1) {
-        title[i].parentNode.style.display = "block";
-      } else {
-      title[i].parentNode.style.display = "none";
-      }
+    // for (i = 0; i < title.length; i++) {
+    //   txtValue = title[i].textContent || title[i].innerText;
+    //   if (txtValue.toUpperCase().indexOf(filter) > -1) {
+    //     title[i].parentNode.style.display = "block";
+    //   } else {
+    //   title[i].parentNode.style.display = "none";
+    //   }
+    // }
+    for(let letter of title){
+        txtValue = letter.textContent || letter.innerText;
+        if(txtValue.toUpperCase().indexOf(filter) > -1) {
+            letter.parentNode.style.display = "block";
+        }else {
+            letter.parentNode.style.display = "none";
+        }
     }
   }
