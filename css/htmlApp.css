@@ -395,3 +395,10 @@ input[type=submit] {
 input[type=submit]:hover {
 	background-color: #28deef;
 }
+
+#play{
+	border: 0;
+}
+#pause{
+	border: 0;
+}
