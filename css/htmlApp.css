@@ -78,13 +78,22 @@ main {
 section {
 	padding: 20px;
 	background-color: #f1f1f1;
+
 }
 
 section h2 {
 	margin: 0;
 }
-
-
+.radio-btn {
+   scale: 1.9;
+   cursor: pointer;
+}
+.radio-btn:hover {
+	opacity: 0.7;
+}
+#pause {
+	display: none;
+}
 .left {
 	grid-column: 1 / 2;
 	margin-left: 10%;
