@@ -5,14 +5,11 @@ const LikeButtonClick = e => {
 	}
 	const likeCountElement = articleElement.querySelector('#like-count');
 	const articleId = articleElement.getAttribute('data-article-id');
-	let storageKey = 'likes-' + articleId;
-	let storageVal = parseInt(localStorage.getItem(storageKey)) || 0;
+	let newValue = GetLikesByArticleId(articleId) + 1;
 
-	storageVal++;
-	likeCountElement.textContent = storageVal;
-	localStorage.setItem(storageKey, storageVal);
+	likeCountElement.textContent = newValue;
+	SetLikesByArticleId(articleId,newValue);
 }
-
 
 const DislikeButtonClick = e => {
 	let articleElement = e.srcElement.parentElement;
@@ -21,26 +18,30 @@ const DislikeButtonClick = e => {
 	}
 	const dislikeCountElement = articleElement.querySelector('#dislike-count');
 	const articleId = articleElement.getAttribute('data-article-id');
-	let storageKey = 'dislikes-' + articleId;
-	let storageVal = parseInt(localStorage.getItem(storageKey)) || 0;
+	let newValue = GetDislikesByArticleId(articleId) + 1;
 
-	storageVal++;
-	dislikeCountElement.textContent = storageVal;
-	localStorage.setItem(storageKey, storageVal);
+	dislikeCountElement.textContent = newValue;
+	SetDislikesByArticleId(articleId,newValue);
 }
 
-const InitLikesAndDislikes = articleElement => {
-	const articleId = articleElement.getAttribute('data-article-id');
+const GetLikesByArticleId = id => {
+	const storageKey = 'likes-' + id;
+	return parseInt(localStorage.getItem(storageKey)) || 0;
+}
 
-	const likeCountElement = articleElement.querySelector('#like-count');
-	let storageKey = 'likes-' + articleId;
-	let storageVal = parseInt(localStorage.getItem(storageKey)) || 0;
-	likeCountElement.textContent = storageVal;
+const SetLikesByArticleId = (id, value) => {
+	const storageKey = 'likes-' + id;
+	localStorage.setItem(storageKey, value);
+}
 
-	const dislikeCountElement = articleElement.querySelector('#dislike-count');
-	storageKey = 'dislikes-' + articleId;
-	storageVal = parseInt(localStorage.getItem(storageKey)) || 0;
-	dislikeCountElement.textContent = storageVal;
+const GetDislikesByArticleId = id => {
+	const storageKey = 'dislikes-' + id;
+	return parseInt(localStorage.getItem(storageKey)) || 0;
+}
+
+const SetDislikesByArticleId = (id, value) => {
+	const storageKey = 'dislikes-' + id;
+	localStorage.setItem(storageKey, value);
 }
 
 function openLeftSidebar() {
@@ -76,10 +77,15 @@ const IncludeFromHtml = () => {
 }
 
 const IncludeFromJSON = () => {
+	// TODO Put defensive ....
 	const urlParams = new URLSearchParams(window.location.search);
 	let filterClass = urlParams.get("filter");
 	if (!filterClass) {
 		filterClass = "";
+	}
+	let filterId = urlParams.get("id");
+	if (!filterId) {
+		filterId = 0;
 	}
 	let includeElement = document.querySelector(".js-include-json");
 	if (includeElement !== null) {
@@ -92,29 +98,31 @@ const IncludeFromJSON = () => {
 						let output = "";
 						const response = JSON.parse(this.responseText);
 						response.forEach(article => {
-							var classes=article.class;
+							var classes = article.class;
 							if (classes.includes(filterClass)) {
-								output += `<div class="container article-world ${article.class}" data-article-id="${article.id}">
-											<h2 class = "article-title">${article.title}</h2>
-											<img class="image" src="${article.imageUrl}" alt="${article.imageText}">
-											<p class="description">${article.description}</p>
-											<button id="like-button"><i class="fa fa-thumbs-up"></i> Like</button>
-											<button id="dislike-button"><i class="fa fa-thumbs-down"></i> Dislike</button>
-											<div>
-												<span id="like-count">0</span> likes,
-												<span id="dislike-count">0</span> dislikes
-											</div>
-											</div>`;
+								if(filterId==0 || article.id == filterId) {
+									output += `<div class="container article-world ${article.class}" data-article-id="${article.id}">
+												<h2 class = "article-title">${article.title}</h2>
+												<img class="image" src="${article.imageUrl}" alt="${article.imageText}">
+												<p class="description">${article.description}</p>
+												<button id="like-button"><i class="fa fa-thumbs-up"></i> Like</button>
+												<button id="dislike-button"><i class="fa fa-thumbs-down"></i> Dislike</button>
+												<div>
+													<span id="like-count">${GetLikesByArticleId(article.id)}</span> likes,
+													<span id="dislike-count">${GetDislikesByArticleId(article.id)}</span> dislikes
+												</div>
+												</div>`;
+								}
 							}
 						});
 						includeElement.innerHTML = output;
 
 						includeElement.querySelectorAll("#like-button").forEach(item => item.addEventListener("click", LikeButtonClick));
 						includeElement.querySelectorAll("#dislike-button").forEach(item => item.addEventListener("click", DislikeButtonClick));
-						includeElement.querySelectorAll(".article-world").forEach(article => InitLikesAndDislikes(article));
 
 					}
 					includeElement.classList.remove("js-include-json");
+					// TODO Try catch
 					IncludeFromJSON();
 				}
 			}
