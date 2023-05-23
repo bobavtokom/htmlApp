@@ -52,8 +52,8 @@ const ShowModalWindow = e => {
 	const modalImage = articleImage.cloneNode(true);
 	const articleDescription = articleElement.querySelector("[data-article-description]");
 	
-	let modal = articleElement.parentElement.querySelector("#myModal");
-	let modalClose = modal.querySelector(".modal-close");
+	const modal = articleElement.parentElement.querySelector("#myModal");
+	const modalClose = modal.querySelector(".modal-close");
 
 	modal.querySelector(".article-title").innerHTML = `<h2>${articleTitle.innerHTML}</h2>`
 	const modalArticleImage = modal.querySelector(".article-image").querySelector("img");
@@ -61,12 +61,14 @@ const ShowModalWindow = e => {
 	modal.querySelector(".article-image").appendChild(modalImage);
 	modal.querySelector(".article-description").innerHTML = articleDescription.innerHTML;
 
-	modal.querySelector(".article-buttons").innerHTML = `<button id="like-button"><i class="fa fa-thumbs-up"></i> Like</button>
-														<button id="dislike-button"><i class="fa fa-thumbs-down"></i> Dislike</button>
-														<div>
-															<span id="like-count">${GetLikesByArticleId(articleId)}</span> likes,
-															<span id="dislike-count">${GetDislikesByArticleId(articleId)}</span> dislikes
-														</div>`;
+	let htmlText = `<button id="like-button"><i class="fa fa-thumbs-up"></i> Like</button>
+					<button id="dislike-button"><i class="fa fa-thumbs-down"></i> Dislike</button>
+					<div>
+						<span id="like-count">${GetLikesByArticleId(articleId)}</span> likes,
+						<span id="dislike-count">${GetDislikesByArticleId(articleId)}</span> dislikes
+					</div>`;
+
+	modal.querySelector(".article-buttons").innerHTML = htmlText
 	modal.querySelector(".article-buttons").setAttribute("data-article-id",articleId);
 
 	modal.querySelectorAll("#like-button").forEach(item => item.addEventListener("click", LikeButtonClick));
