@@ -24,6 +24,7 @@ header {
 
 .right img {
 	border-radius: 5px;
+	width: 100%;
 }
 
 header h1 {
@@ -297,7 +298,7 @@ section>h1 {
 	position: fixed;
 	padding-top: 5px;
 	padding-bottom: 5px;
-	padding-right: 5px;
+	padding-right: 5npx;
 	border-radius: 5px;
 	border: 1px solid rgb(49, 169, 209);
 	background-color: #31c2c7;
@@ -410,4 +411,80 @@ input[type=submit]:hover {
 }
 #pause{
 	border: 0;
+}
+
+#top-rated {
+	text-align: center;
+}
+
+.clickable-title {
+	cursor: pointer;
+}
+
+.clickable-title:hover {
+	color:rgb(49, 169, 209);
+}
+
+
+/* CSS for modal window */
+body {font-family: Arial, Helvetica, sans-serif;}
+
+.article-title { grid-area: title; }
+.article-buttons { grid-area: buttons; }
+.article-image { grid-area: image; }
+.article-description { grid-area: description; }
+.article-close { grid-area: close ; }
+
+.grid-container {
+  display: grid;
+  grid-template-areas:
+    'title title title title title title buttons close'
+    'image image image image image description description description';
+  gap: 10px;
+  background-color: rgba(255,255,255,0.8);
+  padding: 10px;
+  border-radius: 10px;
+}
+
+.grid-container > div {
+  /* background-color: rgba(255, 255, 255, 0.8); */
+  text-align: center;
+  padding: 10px;
+}
+
+.modal {
+  display: none;
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  padding-top: 100px; /* Location of the box */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+.modal-content {
+  background-color: #31c2c7;
+  margin: auto;
+  padding: 20px 20px 20px 20px;
+  border-radius: 10px;
+  width: 80%;
+}
+
+/* The Close Button */
+.modal-close {
+  color: #000;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.modal-close:hover,
+.modal-close:focus {
+  color: #ff0000;
+  text-decoration: none;
+  cursor: pointer;
 }
