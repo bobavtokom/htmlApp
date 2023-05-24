@@ -31,6 +31,7 @@ function ActivateNavbarLink() {
         }
     });
 }
+
 function topRated() {
     var likes = document.querySelectorAll("#like-count");
     var maxLike = 0;
@@ -40,6 +41,7 @@ function topRated() {
     }
     console.log(maxLike);
 }
+
 function searchForArticle() {
     var input, filter, title, i, txtValue;
     input = document.getElementById('myInput');
