@@ -44,7 +44,6 @@ const SetDislikesByArticleId = (id, value) => {
 	localStorage.setItem(storageKey, value);
 }
 function toggleHamburger() {
-	const hamburger = document.querySelector('.hamburger');
 	const menu = document.querySelector('.hamburger-menu');
 	menu.classList.toggle("act");
 }
@@ -86,6 +85,9 @@ const ShowModalWindow = e => {
 			modal.style.display = "none";
 		}
 	});
+}
+function closeMain() {
+	document.querySelector(".hamburger-menu").style.width = 0;
 }
 
 const GetTop3LikedArticles = () => {
