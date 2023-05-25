@@ -17,12 +17,14 @@ textarea.addEventListener('input', function () {
 })
 
 // TOGGLE CHATBOX
-const chatboxToggle = document.querySelector('.chatbox-toggle')
-const chatboxMessage = document.querySelector('.chatbox-message-wrapper')
+function InitChatbox() {
+    const chatboxToggle = document.querySelector('.chatbox-toggle')
+    const chatboxMessage = document.querySelector('.chatbox-message-wrapper')
 
-chatboxToggle.addEventListener('click', function () {
-    chatboxMessage.classList.toggle('show')
-})
+    chatboxToggle.addEventListener('click', function () {
+        chatboxMessage.classList.toggle('show')
+    });
+}
 
 // DROPDOWN TOGGLE
 const dropdownToggle = document.querySelector('.chatbox-message-dropdown-toggle')
@@ -41,7 +43,7 @@ document.addEventListener('click', function (e) {
 // CHATBOX MESSAGE
 const chatboxMessageWrapper = document.querySelector('.chatbox-message-content')
 const chatboxNoMessage = document.querySelector('.chatbox-message-no-message')
-
+//function SendChatMessage(){
 chatboxForm.addEventListener('submit', function (e) {
     e.preventDefault()
 
@@ -50,6 +52,7 @@ chatboxForm.addEventListener('submit', function (e) {
         setTimeout(autoReply, 1000)
     }
 })
+//}
 
 function addZero(num) {
     return num < 10 ? '0' + num : num
