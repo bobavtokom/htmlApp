@@ -67,11 +67,16 @@ nav ul {
   }
   .hamburger-menu ul {
 	position: absolute;
+	display: none;
 	left: 2%;
 	top: 14%;
 	background: #b0f4f1;
+	width: 50%;
 	z-index: 15;
 	border: 1px solid rgba(121, 103, 235, 0.5);
+	align-items: center;
+	margin-left: 1%;
+
   }
   @media (max-width: 455px) {
 	.hamburger {

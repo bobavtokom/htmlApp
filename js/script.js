@@ -44,7 +44,6 @@ const SetDislikesByArticleId = (id, value) => {
 	localStorage.setItem(storageKey, value);
 }
 function toggleHamburger() {
-	console.log("ko");
 	const hamburger = document.querySelector('.hamburger');
 	const menu = document.querySelector('.hamburger-menu');
 	menu.classList.toggle("act");
