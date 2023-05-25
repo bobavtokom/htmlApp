@@ -79,6 +79,12 @@ nav ul {
 
   }
   @media (max-width: 455px) {
+	.left, .right {
+		display: none;
+	}
+	main {
+		grid-template-columns: 2fr;
+	}
 	.hamburger {
 	  display: block;
 	}
@@ -119,6 +125,7 @@ nav ul {
 		align-items: center;
 	}
 }
+
 nav a {
 	color: #fff;
 	text-decoration: none;

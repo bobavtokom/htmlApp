@@ -1,6 +1,6 @@
 // MESSAGE INPUT
-const textarea = document.querySelector('.chatbox-message-input')
-const chatboxForm = document.querySelector('.chatbox-message-form')
+var textarea = document.querySelector('.chatbox-message-input')
+var chatboxForm = document.querySelector('.chatbox-message-form')
 
 textarea.addEventListener('input', function () {
     let line = textarea.value.split('\n').length
@@ -17,18 +17,16 @@ textarea.addEventListener('input', function () {
 })
 
 // TOGGLE CHATBOX
-function InitChatbox() {
-    const chatboxToggle = document.querySelector('.chatbox-toggle')
-    const chatboxMessage = document.querySelector('.chatbox-message-wrapper')
+    var chatboxToggle = document.querySelector('.chatbox-toggle')
+    var chatboxMessage = document.querySelector('.chatbox-message-wrapper')
 
     chatboxToggle.addEventListener('click', function () {
         chatboxMessage.classList.toggle('show')
     });
-}
 
 // DROPDOWN TOGGLE
-const dropdownToggle = document.querySelector('.chatbox-message-dropdown-toggle')
-const dropdownMenu = document.querySelector('.chatbox-message-dropdown-menu')
+var dropdownToggle = document.querySelector('.chatbox-message-dropdown-toggle')
+var dropdownMenu = document.querySelector('.chatbox-message-dropdown-menu')
 
 dropdownToggle.addEventListener('click', function () {
     dropdownMenu.classList.toggle('show')
@@ -41,8 +39,8 @@ document.addEventListener('click', function (e) {
 })
 
 // CHATBOX MESSAGE
-const chatboxMessageWrapper = document.querySelector('.chatbox-message-content')
-const chatboxNoMessage = document.querySelector('.chatbox-message-no-message')
+var chatboxMessageWrapper = document.querySelector('.chatbox-message-content')
+var chatboxNoMessage = document.querySelector('.chatbox-message-no-message')
 //function SendChatMessage(){
 chatboxForm.addEventListener('submit', function (e) {
     e.preventDefault()

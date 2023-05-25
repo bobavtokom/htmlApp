@@ -8,7 +8,7 @@ const LikeButtonClick = e => {
 	let newValue = GetLikesByArticleId(articleId) + 1;
 
 	likeCountElement.textContent = newValue;
-	SetLikesByArticleId(articleId,newValue);
+	SetLikesByArticleId(articleId, newValue);
 }
 
 const DislikeButtonClick = e => {
@@ -21,7 +21,7 @@ const DislikeButtonClick = e => {
 	let newValue = GetDislikesByArticleId(articleId) + 1;
 
 	dislikeCountElement.textContent = newValue;
-	SetDislikesByArticleId(articleId,newValue);
+	SetDislikesByArticleId(articleId, newValue);
 }
 
 const GetLikesByArticleId = id => {
@@ -56,13 +56,13 @@ const ShowModalWindow = e => {
 	const articleImage = articleElement.querySelector(".image");
 	const modalImage = articleImage.cloneNode(true);
 	const articleDescription = articleElement.querySelector("[data-article-description]");
-	
+
 	const modal = articleElement.parentElement.querySelector("#myModal");
 	const modalClose = modal.querySelector(".modal-close");
 
 	modal.querySelector(".article-title").innerHTML = `<h2>${articleTitle.innerHTML}</h2>`
 	const modalArticleImage = modal.querySelector(".article-image").querySelector("img");
-	if(modalArticleImage) { modalArticleImage.remove(); }
+	if (modalArticleImage) { modalArticleImage.remove(); }
 	modal.querySelector(".article-image").appendChild(modalImage);
 	modal.querySelector(".article-description").innerHTML = articleDescription.innerHTML;
 
@@ -74,13 +74,13 @@ const ShowModalWindow = e => {
 					</div>`;
 
 	modal.querySelector(".article-buttons").innerHTML = htmlText
-	modal.querySelector(".article-buttons").setAttribute("data-article-id",articleId);
+	modal.querySelector(".article-buttons").setAttribute("data-article-id", articleId);
 
 	modal.querySelectorAll("#like-button").forEach(item => item.addEventListener("click", LikeButtonClick));
 	modal.querySelectorAll("#dislike-button").forEach(item => item.addEventListener("click", DislikeButtonClick));
 
 	modal.style.display = "block";
-	modalClose.addEventListener("click", () => modal.style.display = "none" );
+	modalClose.addEventListener("click", () => modal.style.display = "none");
 	window.addEventListener("click", (e) => {
 		if (e.target == modal) {
 			modal.style.display = "none";
@@ -102,9 +102,9 @@ const GetTop3LikedArticles = () => {
 							article.likes = GetLikesByArticleId(article.id);
 							article.dislikes = GetDislikesByArticleId(article.id);
 						});
-						response.sort((a,b) => b.likes - a.likes)
-						let lastAricle=Math.min(3,response.length);
-						let top3articles = response.slice(0,lastAricle);
+						response.sort((a, b) => b.likes - a.likes)
+						let lastAricle = Math.min(3, response.length);
+						let top3articles = response.slice(0, lastAricle);
 						let output = `<h2>Top ${lastAricle} liked destination</h2>`;
 						top3articles.forEach(article => {
 							output += `<div class="container" data-article-id="${article.id}">
@@ -117,7 +117,7 @@ const GetTop3LikedArticles = () => {
 											<div hidden data-article-description>${article.description}</div>
 										</div>`;
 						});
-						
+
 						output += `<div id="myModal" class="modal">
 									<div class="modal-content">
 									<div class="grid-container">
@@ -152,17 +152,41 @@ function closeLeftSidebar() {
 	document.getElementById("sidebar").style.left = "-250px";
 }
 
+const LoadJS = (FILE_URL, async = true) => {
+	let scriptEle = document.createElement("script");
+
+	scriptEle.setAttribute("src", FILE_URL);
+	scriptEle.setAttribute("type", "text/javascript");
+	scriptEle.setAttribute("async", async);
+
+	document.body.appendChild(scriptEle);
+
+	// success event 
+	scriptEle.addEventListener("load", () => {
+		console.log("File loaded")
+	});
+	// error event
+	scriptEle.addEventListener("error", (ev) => {
+		console.log("Error on loading file", ev);
+	});
+}
+
 const IncludeFromHtml = () => {
 	let includeElement = document.querySelector(".js-include-html");
 	if (includeElement !== null) {
 		let filename = includeElement.getAttribute("data-filename");
 		let callbackFunction = includeElement.getAttribute("data-function");
+		let scriptFile = includeElement.getAttribute("data-load-script");
 		if (filename) {
 			xhttp = new XMLHttpRequest();
 			xhttp.onreadystatechange = function () {
 				if (this.readyState == 4) {
 					if (this.status == 200) {
 						includeElement.innerHTML = this.responseText;
+						if (scriptFile) {
+							console.log(scriptFile);
+							LoadJS(scriptFile);
+						}
 						if (callbackFunction) {
 							eval(callbackFunction);
 						}
@@ -201,7 +225,7 @@ const IncludeFromJSON = () => {
 						response.forEach(article => {
 							var classes = article.class;
 							if (classes.includes(filterClass)) {
-								if(filterId==0 || article.id == filterId) {
+								if (filterId == 0 || article.id == filterId) {
 									output += `<div class="container article-world ${article.class}" data-article-id="${article.id}">
 													<h2 class = "article-title">${article.title}</h2>
 													<img class="image" src="${article.imageUrl}" alt="${article.imageText}">
