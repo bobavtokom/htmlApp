@@ -67,6 +67,7 @@ nav ul {
   }
   .hamburger-menu ul {
 	position: absolute;
+	display: none;
 	left: 2%;
 	top: 14%;
 	background: #b0f4f1;
