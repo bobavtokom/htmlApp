@@ -1,0 +1,18 @@
+<button id="macedonia" class="spin-button" onclick="openLeftSidebar()">
+  <span class="sidebar-text">Open Sidebar</span>
+</button>
+<div id="sidebar">
+  <i class="fa fa-times" aria-hidden="true" id="x-close" onclick="closeLeftSidebar()"></i>
+  <div class="contenedor-menu">
+
+    <ul class="menu">
+      <li id="choose-destination"><a href="#">Choose destination<i class="fa fa-chevron-down"></i></a>
+        <ul>
+          <li><a href="/htmlApp.html">World destinations</a></li>
+          <li><a onclick="topRated()" href="/htmlApp.html?filter=macedonia">Macedonia destinations</a></li>
+        </ul>
+      </li>
+    </ul>
+    <input type="text" id="myInput" onkeyup="searchForArticle()" placeholder="Search for destination...">
+  </div>
+</div>

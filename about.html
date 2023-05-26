@@ -1,36 +1,44 @@
 <!DOCTYPE html>
 <html>
+
 <head>
 	<title>Html Css Js Project</title>
 	<link rel="stylesheet" type="text/css" href="css/htmlApp.css">
+	<link rel="stylesheet" type="text/css" href="css/accordion.css">
+	<script src="https://kit.fontawesome.com/6a7b1ca22e.js" crossorigin="anonymous"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+	<script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+	<script src="js/functions.js"></script>
+	<meta charset="UTF-8">
+    <link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="css/chatbox-style.css">
+
 </head>
+
 <body>
-	<header>
-		<h1>Our project</h1>
-		<nav>
-			<ul>
-				<li><a href="#" class="active">About</a></li>
-				<li><a href="htmlApp.html">Home</a></li>
-				<li><a href="contact.html">Contact</a></li>
-			</ul>
-		</nav>
-	</header>
-	<main>
-		<div class="sidebar-left">
-			<ul>
-			  <li>Menu Item 1</li>
-			  <li>Menu Item 2</li>
-			  <li>Menu Item 3</li>
-			  <li>hello 4</li>
-			</ul>
-		  </div>
+	
+	<span class="js-include-html" data-filename="partial/header.html" data-function="ActivateNavbarLink()"></span>
+	<main id="ham-main">
+		<!-- Left Side bar -->
+		<span class="js-include-html" data-filename="partial/_sidebar.htm" data-function="InitSidebar()"></span>
+
 		<section class="center">
-			<p>About us</p>
+			<div id="about-div1" style="display:none; font-size: 18px;">We are a relatively young travel agency that aims to find and suggest interesting, beautiful, special destinations that you could visit.</div>
+			<br>
+			<div id="about-div2" style="display:none; font-size: 18px;">Our company exists since 2021 and to date we have more than 10,000 satisfied customers.</div>
+			<br>
+			<div id="about-div3" style="display:none; font-size: 18px;">Our task is to help you choose the right destination for you, as well as to facilitate your journey there and your stay. Let us suggest a way of travel and accommodation according to your needs.</div>
+			<br>
+			<div id="about-div4" style="display:none; font-size: 18px;">We are always here for you !</div>
+			<br>
 		</section>
 	</main>
-	<footer>
-        <h1>Footer section</h1>
-		<p>&copy; 2023 Html Css Js Project. All rights reserved.</p>
-	</footer>
+	<div class="js-include-html" data-filename="partial/chatbox-window.html" data-load-script="js/chat-script.js"></div>
+
+	<span class="js-include-html" data-filename="partial/footer.html"></span>
+	<script src="js/script.js"></script>
+	<script src="js/jqueryScript.js"></script>
+	<script src="js/music.js"></script>
 </body>
+
 </html>

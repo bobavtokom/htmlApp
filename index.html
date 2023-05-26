@@ -1,46 +1,68 @@
 <!DOCTYPE html>
 <html>
+
 <head>
 	<title>Html Css Js Project</title>
 	<link rel="stylesheet" type="text/css" href="css/htmlApp.css">
+	<link rel="stylesheet" type="text/css" href="css/accordion.css">
+	<script src="https://kit.fontawesome.com/6a7b1ca22e.js" crossorigin="anonymous"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+	<script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+	<script src="js/functions.js"></script>
 </head>
+
 <body>
-	<header>
-		<h1>Our project</h1>
-		<nav>
-			<ul>
-				<li><a href="#" class="active">About</a></li>
-				<li><a href="htmlApp.html">Home</a></li>
-				<li><a href="contact.html">Contact</a></li>
-			</ul>
-		</nav>
-	</header>
+	<style>
+		body {
+			background-image: url('https://helpx.adobe.com/content/dam/help/en/photoshop/using/convert-color-image-black-white/jcr_content/main-pars/before_and_after/image-before/Landscape-Color.jpg');
+			position: relative;
+			overflow: hidden;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100vh;
+			background-repeat: no-repeat;
+			background-size: cover;
 	
+		}
+	</style>
+	<span class="js-include-html" data-filename="partial/header.html"></span>
+
+
 	<div class="slider-container">
-		
+
 		<div class="slide"></div>
 		<div class="slide"></div>
 		<div class="slide"></div>
 		<main>
-			<section id="index-text"class="center">
+			<section id="index-text" class="center">
 				<h1>Wellcome to the best exotic destination suggestions.
 					We hope you will find your paradise
 					which will make you happy :)
-			</h1>
+				</h1>
+				<br>
+				<div class="btn">
+					<a href="htmlApp.html">Start your journey!</a>
+				</div>
 			</section>
 		</main>
-	  </div>
-<script>
-	const slides = document.querySelectorAll('.slide');
-const slideInterval = setInterval(nextSlide, 5000);
-let currentSlide = 0;
+	</div>
+	<span class="js-include-html" data-filename="partial/footer.html"></span>
+	<script src="js/script.js"></script>
+	<script src="js/jqueryScript.js"></script>
+	<script src="js/music.js"></script>
+	<script>
+		const slides = document.querySelectorAll('.slide');
+		const slideInterval = setInterval(nextSlide, 5000);
+		let currentSlide = 0;
 
-function nextSlide() {
-  slides[currentSlide].classList.remove('active');
-  currentSlide = (currentSlide + 1) % slides.length;
-  slides[currentSlide].classList.add('active');
-}
+		function nextSlide() {
+			slides[currentSlide].classList.remove('active');
+			currentSlide = (currentSlide + 1) % slides.length;
+			slides[currentSlide].classList.add('active');
+		}
 
-</script>	  
+	</script>
 </body>
+
 </html>

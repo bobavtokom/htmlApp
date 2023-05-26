@@ -1,0 +1,54 @@
+<header>
+	<div id="logo-div">
+		<a href="index.html">
+		<img id="logo"
+			src="https://fiverr-res.cloudinary.com/t_main1,q_auto,f_auto/gigs2/301383703/original/a8cccf825048f406f8868a549aa14d2dda6c3182.jpg"
+			alt="">
+		</a>
+	</div>
+	<div style="flex-grow: 2; text-align: center;">
+		<a id="play" onclick="play()"><i class="fa fa-play radio-btn"></i></a>
+		<a id="pause" onclick="pause()"><i class="fa fa-pause radio-btn"></i></a>
+		<audio id="music">
+			<source src="audio/TravelMusic.mp3" type="audio/mpeg">
+		</audio>
+	</div>
+	<nav>
+		<div class="hamburger" onclick="toggleHamburger()">
+			<div class="line"></div>
+			<div class="line"></div>
+			<div class="line"></div>
+		</div>
+		<div class="hamburger-menu">
+			<i class="fa fa-times" aria-hidden="true" id="x-close" onclick="toggleHamburger()"></i>
+			<div class="hamburger-menu-item">
+				<div>
+					<a href="index.html">
+						<img src="https://fiverr-res.cloudinary.com/t_main1,q_auto,f_auto/gigs2/301383703/original/a8cccf825048f406f8868a549aa14d2dda6c3182.jpg"
+							alt="">
+					</a>
+				</div>
+				<div>
+					<span><a href="htmlApp.html">Home</a></span>
+				</div>
+				<div>
+					<span><a href="about.html">About</a></span>
+				</div>
+				<div>
+					<span><a href="contact.html">Contact</a></span>
+				</div>
+			</div>
+		</div>
+
+		<ul id="nav_bar">
+			<li><a href="htmlApp.html">Home</a></li>
+			<li><a href="about.html">About</a></li>
+			<li><a href="contact.html">Contact</a></li>
+			<form id="google-search" action="https://www.google.com/search" method="get" target="_blank">
+				<label for="search"></label>
+				<input type="text" id="search" class="search-input" name="q" placeholder="Google">
+				<button class="search" type="submit">Search</button>
+			</form>
+		</ul>
+	</nav>
+</header>

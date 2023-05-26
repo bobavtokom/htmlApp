@@ -1,61 +1,64 @@
 <!DOCTYPE html>
 <html>
+
 <head>
 	<title>Html Css Js Project</title>
 	<link rel="stylesheet" type="text/css" href="css/htmlApp.css">
+	<link rel="stylesheet" type="text/css" href="css/accordion.css">
+	<script src="https://kit.fontawesome.com/6a7b1ca22e.js" crossorigin="anonymous"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+	<script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+	<script src="js/functions.js"></script>
+	<meta charset="UTF-8">
+    <link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="css/chatbox-style.css">
 </head>
+
 <body>
-	<header>
-		<h1>Our project</h1>
-		<nav>
-			<ul>
-				<li><a href="#" class="active">Home</a></li>
-				<li><a href="about.html">About</a></li>
-				<li><a href="contact.html">Contact</a></li>
-				<form action="https://www.google.com/search" method="get">
-					<label for="search"></label>
-					<input type="text" id="search" name="q" placeholder="Search">
-					<button type="submit">Search</button>
-				  </form>
-			</ul>
-			
-			  
-		</nav>
-	</header>
-	<main>
-		<button class="left-window-btn" onclick="openLeftSidebar()">
-			Open sidebar
-		  </button>
-		<div  id="left-sidebar">
-			<ul>
-			  <li>Menu Item 1111</li>
-			  <li>Menu Item 2</li>
-			  <li>Menu Item 3</li>
-			  <li>hello 4</li>
-			</ul>
-			<button class="left-sidebar-btn" onclick="closeLeftSidebar()">
-				Close sidebar
-			  </button>
-		  </div>
+	<span class="js-include-html" data-filename="partial/header.html" data-function="ActivateNavbarLink()"></span>
+
+	<main id="ham-main">
+		<span class="js-include-html" data-filename="partial/_sidebar.htm" data-function="InitSidebar()"></span>
+
 		<section class="left">
-			<h2>Left Section left</h2>
-			<p>Some elements here</p>
-		</section>
-		<section class="right">
-			<h2>Right Section</h2>
-			<p>Some elements here</p>
-			<p>Some elements here</p>
+			<div id="top-rated">
+				<span class="js-gettop3liked-json" data-filename="data/articles.json"></span>
+			</div>
 		</section>
 		<section class="center">
-			<h2>Center Section</h2>
-			<p>Some elements here</p>
+			<span class="js-include-json" data-filename="data/articles.json"></span>
+		</section>
+		<section class="right">
+			<img src="https://media1.giphy.com/media/l3E6Ek4zKHFXGOzFm/giphy.gif" alt="image" />
+			<div>
+				<a href="https://www.stb.com.mk/appform/potrosuvacki-kredit-so-obezbeduvanje-80000-eu" target="_blank">
+					<img src="https://bggde.adocean.pl/files/akifogwllcu/sampepghsi/xplplxgfyt/300x600-potroshuvachki-obezbeden.gif"
+						alt="">
+				</a>
+			</div><br>
+			<div>
+				<a href="https://alkaloid.com.mk/mk/product/multi-essence-vitamin-d3-1000-iu-2000-iu-4000-iu"
+					target="_blank">
+					<img src="https://time.mk/ads/c959c749e6e608e828321761716f0830.gif" alt="">
+				</a>
+			</div><br>
+			<div>
+				<a href="https://www.neptun.mk/issuu.nspx?promotion=2276" target="_blank">
+					<img src="https://bggde.adocean.pl/files/akidojuirei/sampepghsi/shehhosqgo/Gaming-300x250.gif"
+						alt="">
+				</a>
+			</div>
 		</section>
 	</main>
+	<!-- <div class="js-include-html" data-filename="partial/chatbox-window.html" data-function="InitChatbox()"></div> -->
+	<div class="js-include-html" data-filename="partial/chatbox-window.html" data-load-script="js/chat-script.js"></div>
 
-	<footer>
-		<h1>Footer section</h1>
-		<p>&copy; 2023 Html Css Js Project. All rights reserved.</p>
-	</footer>
-	
+	<span class="js-include-html" data-filename="partial/footer.html"></span>
+	<script src="js/script.js"></script>
+	<script src="js/jqueryScript.js"></script>
+	<script src="js/music.js"></script>
+	<!-- <script src="js/chat-script.js"></script> -->
+
 </body>
+
 </html>

@@ -1,0 +1,34 @@
+[
+    {
+        "id": "1",
+        "class": "",
+        "title": "Skiathos Greece",
+        "imageUrl": "https://travelpassionate.com/wp-content/uploads/2020/01/Lalaria-Beach-Skiathos.jpg",
+        "imageText": "Skiathos Greece",
+        "description": "Skiathos, a Greek island in the northwest Aegean Sea, is part of the Sporades archipelago. It&apos;s best known for its beaches and buzzing, youth-driven nightlife scene. The centers around Skiathos Town, where bars and restaurants spill onto sidewalks along the old harbor and Papadiamanti street, the main pedestrian thoroughfare. Between town and the airport are many open-air, waterfront clubs."
+    },
+    {
+        "id": "2",
+        "class": "",
+        "title": "Tyrol Austria",
+        "imageUrl": "https://www.shutterstock.com/image-photo/village-inneralpbach-alpbach-valleyaustriatirol-260nw-543923905.jpg",
+        "imageText": "Tyrol Austria",
+        "description": "Tyrol is a western Austrian state in the Alps that&apos;s known for its ski resorts, historic sites and folk traditions. The capital city, Innsbruck, surrounded by mountains, is home to Habsburg Empire landmarks like baroque-style Hofburg Palace and Gothic Hofkirche Church. The city&apos;s symbol is the 15th-century Goldenes Dachl, a loggia topped with gleaming copper tiles commissioned by Habsburg Emperor Maximilian I."
+    },
+    {
+        "id": "3",
+        "class": "macedonia",
+        "title": "Matka Canyon Macedonia",
+        "imageUrl": "https://img.particlenews.com/img/id/4C3iZg_0l8rYzE100?type=thumbnail_1600x1200",
+        "imageText": "Matka Canyon Macedonia",
+        "description": "Matka is a canyon located west of central Skopje, North Macedonia. Covering roughly 5,000 hectares, Matka is one of the most popular outdoor destinations in North Macedonia and is home to several medieval monasteries. The Matka Lake within the Matka Canyon is the oldest artificial lake in the country."
+    },
+    {
+        "id": "4",
+        "class": "macedonia",
+        "title": "Lake Ohrid Macedonia",
+        "imageUrl": "https://macedonia-timeless.com/wp-content/uploads/2018/09/ohrid-biljanini-izvori.jpg",
+        "imageText": "Lake Ohrid Macedonia",
+        "description": "Lake Ohrid is a superlative natural phenomenon, providing refuge for numerous endemic and relict freshwater species of flora and fauna dating from the tertiary period. As a deep and ancient lake of tectonic origin, Lake Ohrid has existed continuously for approximately two to three million years. Its oligotrophic waters conserve over 200 species of plants and animals unique to the lake, including algae, turbellarian flatworms, snails, crustaceans and 17 endemic species of fish including two species of trout, as well as a rich birdlife."
+    }
+]
