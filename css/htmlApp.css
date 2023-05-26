@@ -560,6 +560,11 @@ body {
 	grid-area: buttons;
 }
 
+.article-buttons>button {
+	padding: 0px 10px;
+    cursor: pointer;
+}
+
 .article-image {
 	grid-area: image;
 }
@@ -575,8 +580,8 @@ body {
 .grid-container {
 	display: grid;
 	grid-template-areas:
-		'title title title title title title buttons close'
-		'image image image image image description description description';
+		'title title title title title title buttons buttons close'
+		'image image image image image description description description description';
 	gap: 10px;
 	background-color: rgba(255, 255, 255, 0.8);
 	padding: 10px;
@@ -613,10 +618,14 @@ body {
 
 .modal-content {
 	background-color: #31c2c7;
-	margin: auto;
 	padding: 20px 20px 20px 20px;
 	border-radius: 10px;
 	width: 80%;
+	transform: translate(-50%, -50%);
+    top: 50%;
+    position: absolute;
+
+    left: 50%;
 }
 
 /* The Close Button */

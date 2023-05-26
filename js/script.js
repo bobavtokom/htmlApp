@@ -1,8 +1,8 @@
 const ReloadTop3Destination = () => {
 	const spanElement = document.querySelector("#top-rated>span");
-	if(spanElement) {
+	if (spanElement) {
 		spanElement.classList.toggle("js-gettop3liked-json");
-		GetTop3LikedArticles();
+		GetTop3LikedArticles(true);
 	}
 }
 
@@ -118,7 +118,7 @@ function closeMain() {
 	document.querySelector(".hamburger-menu").style.width = 0;
 }
 
-const GetTop3LikedArticles = () => {
+const GetTop3LikedArticles = (reload = false) => {
 	let includeElement = document.querySelector(".js-gettop3liked-json");
 	if (includeElement !== null) {
 		let filename = includeElement.getAttribute("data-filename");
@@ -148,22 +148,31 @@ const GetTop3LikedArticles = () => {
 										</div>`;
 						});
 
-						output += `<div id="myModal" class="modal">
-									<div class="modal-content">
-									<div class="grid-container">
-										<div class="modal-close article-close">&times;</div>
-										<div class="article-title"></div>
-										<div class="article-buttons"></div>
-										<div class="article-image"></div>  
-										<div class="article-description"></div>
-									</div>
-									</div>
-								</div>`
+						if (!reload) {
 
-						includeElement.innerHTML = output;
+							output += `<div id="myModal" class="modal">
+										<div class="modal-content">
+										<div class="grid-container">
+											<div class="modal-close article-close">&times;</div>
+											<div class="article-title"></div>
+											<div class="article-buttons"></div>
+											<div class="article-image"></div>  
+											<div class="article-description"></div>
+										</div>
+										</div>
+									</div>`
 
-						includeElement.querySelectorAll(".clickable-title").forEach(item => item.addEventListener("click", ShowModalWindow));
+							includeElement.innerHTML = output;
+						} else {
+							const modalElement = includeElement.querySelector("#myModal");
+							includeElement.innerHTML = output;
+							if(modalElement){
+								includeElement.appendChild(modalElement);
+							}
+						}
 						
+						includeElement.querySelectorAll(".clickable-title").forEach(item => item.addEventListener("click", ShowModalWindow));
+
 					}
 					includeElement.classList.remove("js-gettop3liked-json");
 					// TODO Try catch
