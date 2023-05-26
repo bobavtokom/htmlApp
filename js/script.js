@@ -1,14 +1,31 @@
+const UpdateLikeNumber = id => {
+	const likeElements = document.querySelectorAll("#like-count");
+	likeElements.forEach(element => {
+		const articleId = element.parentElement.parentElement.getAttribute('data-article-id');
+		const articleLikeNumber = GetLikesByArticleId(articleId);
+		element.textContent = articleLikeNumber;
+	});
+}
+
+const UpdateDislikeNumber = id => {
+	const likeElements = document.querySelectorAll("#dislike-count");
+	likeElements.forEach(element => {
+		const articleId = element.parentElement.parentElement.getAttribute('data-article-id');
+		const articleDislikeNumber = GetDislikesByArticleId(articleId);
+		element.textContent = articleDislikeNumber;
+	});
+}
+
 const LikeButtonClick = e => {
 	let articleElement = e.srcElement.parentElement;
 	if (e.srcElement.classList.contains("fa")) {
 		articleElement = e.srcElement.parentElement.parentElement;
 	}
-	const likeCountElement = articleElement.querySelector('#like-count');
 	const articleId = articleElement.getAttribute('data-article-id');
 	let newValue = GetLikesByArticleId(articleId) + 1;
 
-	likeCountElement.textContent = newValue;
 	SetLikesByArticleId(articleId, newValue);
+	UpdateLikeNumber(articleId);
 }
 
 const DislikeButtonClick = e => {
@@ -16,12 +33,11 @@ const DislikeButtonClick = e => {
 	if (e.srcElement.classList.contains("fa")) {
 		articleElement = e.srcElement.parentElement.parentElement;
 	}
-	const dislikeCountElement = articleElement.querySelector('#dislike-count');
 	const articleId = articleElement.getAttribute('data-article-id');
 	let newValue = GetDislikesByArticleId(articleId) + 1;
 
-	dislikeCountElement.textContent = newValue;
 	SetDislikesByArticleId(articleId, newValue);
+	UpdateDislikeNumber(articleId);
 }
 
 const GetLikesByArticleId = id => {
@@ -86,6 +102,7 @@ const ShowModalWindow = e => {
 		}
 	});
 }
+
 function closeMain() {
 	document.querySelector(".hamburger-menu").style.width = 0;
 }
