@@ -53,6 +53,7 @@ nav ul {
 	display: grid;
 	grid-gap: 10px;
 	grid-auto-flow: column;
+	align-items: center;
 }
 
 .hamburger {
@@ -171,7 +172,8 @@ nav a {
 
 }
 
-nav span>a:hover {
+nav span>a:hover,
+nav li>a:hover {
 	scale: 2;
 	background-color: #16a085;
 	border-radius: 5%;
@@ -541,6 +543,9 @@ input[type=submit]:hover {
 	color: rgb(49, 169, 209);
 }
 
+img.clickable-title:hover {
+	outline: inset;
+}
 
 /* CSS for modal window */
 body {

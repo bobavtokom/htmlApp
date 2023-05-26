@@ -88,6 +88,7 @@ const ShowModalWindow = e => {
 	modal.querySelector(".article-title").innerHTML = `<h2>${articleTitle.innerHTML}</h2>`
 	const modalArticleImage = modal.querySelector(".article-image").querySelector("img");
 	if (modalArticleImage) { modalArticleImage.remove(); }
+	modalImage.classList.remove("clickable-title");
 	modal.querySelector(".article-image").appendChild(modalImage);
 	modal.querySelector(".article-description").innerHTML = articleDescription.innerHTML;
 
@@ -138,7 +139,7 @@ const GetTop3LikedArticles = () => {
 						top3articles.forEach(article => {
 							output += `<div class="container" data-article-id="${article.id}">
 											<h4 class="article-title clickable-title">${article.title}</h4>
-											<img class="image" src="${article.imageUrl}" alt="${article.imageText}">
+											<img class="image clickable-title" src="${article.imageUrl}" alt="${article.imageText}">
 											<div>
 												<span id="like-count">${GetLikesByArticleId(article.id)}</span> likes,
 												<span id="dislike-count">${GetDislikesByArticleId(article.id)}</span> dislikes
@@ -161,7 +162,8 @@ const GetTop3LikedArticles = () => {
 
 						includeElement.innerHTML = output;
 
-						includeElement.querySelectorAll(".article-title").forEach(item => item.addEventListener("click", ShowModalWindow));
+						includeElement.querySelectorAll(".clickable-title").forEach(item => item.addEventListener("click", ShowModalWindow));
+						
 					}
 					includeElement.classList.remove("js-gettop3liked-json");
 					// TODO Try catch
