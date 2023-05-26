@@ -1,3 +1,11 @@
+const ReloadTop3Destination = () => {
+	const spanElement = document.querySelector("#top-rated>span");
+	if(spanElement) {
+		spanElement.classList.toggle("js-gettop3liked-json");
+		GetTop3LikedArticles();
+	}
+}
+
 const UpdateLikeNumber = id => {
 	const likeElements = document.querySelectorAll("#like-count");
 	likeElements.forEach(element => {
@@ -5,6 +13,7 @@ const UpdateLikeNumber = id => {
 		const articleLikeNumber = GetLikesByArticleId(articleId);
 		element.textContent = articleLikeNumber;
 	});
+	ReloadTop3Destination();
 }
 
 const UpdateDislikeNumber = id => {
@@ -14,6 +23,7 @@ const UpdateDislikeNumber = id => {
 		const articleDislikeNumber = GetDislikesByArticleId(articleId);
 		element.textContent = articleDislikeNumber;
 	});
+	ReloadTop3Destination();
 }
 
 const LikeButtonClick = e => {
